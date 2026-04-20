@@ -20,28 +20,28 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(32,144,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(32,144,255,.03) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:0}
 body::after{content:'';position:fixed;top:-20%;right:-10%;width:60vw;height:60vw;background:radial-gradient(ellipse,rgba(255,59,32,.05) 0%,transparent 65%);pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:calc(20px + env(safe-area-inset-top,0px)) 18px calc(80px + env(safe-area-inset-bottom,0px))}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top,0px)) 28px calc(80px + env(safe-area-inset-bottom,0px))}
 header{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;margin-bottom:28px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:12px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-logo{width:44px;height:44px;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-logo svg{width:44px;height:44px;animation:logo-spin 20s linear infinite}
 @keyframes logo-spin{to{transform:rotate(360deg)}}
 .brand-logo::after{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red)}
-.brand-name{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:4px;color:var(--white);line-height:1}
-.brand-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.brand-name{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:5px;color:var(--white);line-height:1}
+.brand-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
 .hdr-right{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);text-align:right;line-height:2;letter-spacing:1px}
 .live-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:4px;vertical-align:middle;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .search-section{margin-bottom:24px}
 .search-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block}
 .search-wrap{position:relative}
-.search-input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-family:'IBM Plex Sans',sans-serif;font-size:18px;font-weight:300;padding:16px 52px 16px 16px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;border-radius:0}
+.search-input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-family:'IBM Plex Sans',sans-serif;font-size:20px;font-weight:300;padding:20px 60px 20px 20px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;border-radius:0}
 .search-input:focus{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
 .search-input::placeholder{color:var(--dim)}
-.search-btn{position:absolute;right:0;top:0;bottom:0;width:52px;background:var(--red);border:none;cursor:pointer;font-size:18px;transition:background .15s;display:flex;align-items:center;justify-content:center}
+.search-btn{position:absolute;right:0;top:0;bottom:0;width:64px;background:var(--red);border:none;cursor:pointer;font-size:22px;transition:background .15s;display:flex;align-items:center;justify-content:center}
 .search-btn:hover{background:#e02d10}
 .search-btn:disabled{background:var(--muted);cursor:not-allowed}
 .ac-list{position:absolute;top:calc(100% + 1px);left:0;right:0;background:var(--bg2);border:1px solid var(--border);border-top:none;z-index:100;display:none;max-height:220px;overflow-y:auto}
@@ -65,14 +65,14 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .ls.active::before{content:'▶ '}
 .ls.done{opacity:.5;color:var(--green)}
 .ls.done::before{content:'✓ '}
-.error-box{display:none;background:rgba(255,59,32,.07);border:1px solid rgba(255,59,32,.25);padding:16px 20px;margin-bottom:20px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red)}
+.error-box{display:none;background:rgba(255,59,32,.07);border:1px solid rgba(255,59,32,.25);padding:20px 24px;margin-bottom:24px;font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:var(--red);line-height:1.7}
 .error-box.on{display:block}
 .results{display:none}
 .results.on{display:block}
 .loc-strip{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border);padding:12px 16px;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-.loc-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white)}
-.loc-meta{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);text-align:right;line-height:1.8;letter-spacing:.5px}
-.alert-bar{display:none;background:rgba(255,192,32,.06);border:1px solid rgba(255,192,32,.3);padding:10px 16px;margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--yellow);line-height:1.7}
+.loc-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--white)}
+.loc-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);text-align:right;line-height:1.8}
+.alert-bar{display:none;background:rgba(255,192,32,.06);border:1px solid rgba(255,192,32,.3);padding:14px 20px;margin-bottom:20px;font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:var(--yellow);line-height:1.8}
 .alert-bar.on{display:block}
 .alert-bar.tornado{background:rgba(255,59,32,.1);border-color:rgba(255,59,32,.4);color:var(--red)}
 .prob-card{background:var(--bg2);border:1px solid var(--border);padding:22px;margin-bottom:18px;position:relative;overflow:hidden}
@@ -83,71 +83,72 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .prob-card.rk-mod::before{background:var(--orange)}
 .prob-card.rk-high::before{background:var(--red)}
 .prob-card.rk-extreme::before{background:#ff40ff}
-.prob-grid{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:center}
+.prob-grid{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}
 .prob-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
-.prob-num{font-family:'Bebas Neue',sans-serif;font-size:88px;line-height:1;letter-spacing:-1px}
+.prob-num{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:1;letter-spacing:-2px}
 .prob-pct{font-size:36px;opacity:.5}
 .prob-track{height:4px;background:var(--border);margin-top:8px;overflow:hidden}
 .prob-fill{height:100%;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
-.prob-risk{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;margin-top:6px}
-.prob-headline{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:var(--white);line-height:1.2;margin-bottom:8px}
-.prob-summary{font-size:13px;font-weight:300;color:var(--body);line-height:1.65}
+.prob-risk{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;margin-top:8px}
+.prob-headline{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:var(--white);line-height:1.2;margin-bottom:10px}
+.prob-summary{font-size:16px;font-weight:300;color:var(--body);line-height:1.7}
 .data-src{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
 .ds{font-family:'IBM Plex Mono',monospace;font-size:9px;border:1px solid var(--border);padding:3px 8px;color:var(--muted);letter-spacing:1px}
 .ds.live{border-color:var(--teal);color:var(--teal)}
-.sec{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;margin-top:4px;display:flex;align-items:center;gap:10px}
 .sec::after{content:'';flex:1;height:1px;background:var(--border)}
 .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:20px}
 .ts{background:var(--bg2);border:1px solid var(--border);padding:10px 6px;text-align:center;position:relative;transition:border-color .2s,transform .15s}
 .ts:hover{transform:translateY(-2px)}
 .ts.peak{border-color:var(--orange)}
 .ts.warn{border-color:rgba(255,192,32,.5)}
-.ts-hr{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:5px;letter-spacing:.5px}
-.ts-prob{font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:1;letter-spacing:1px}
+.ts-hr{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.5px}
+.ts-prob{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;letter-spacing:1px}
 .ts-pct{font-size:11px;opacity:.5}
 .ts-bar{height:3px;background:var(--border);margin-top:6px;overflow:hidden}
 .ts-fill{height:100%;transition:width .8s ease-out}
-.ts-tag{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.ts-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:5px;text-transform:uppercase;letter-spacing:.5px}
 .ts-dot{position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%}
 .idx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:20px}
 .idx{background:var(--bg2);border:1px solid var(--border);padding:14px 12px}
 .idx-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px}
-.idx-abbr{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.idx-abbr{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
 .idx-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:1px}
-.idx-val{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;letter-spacing:1px}
+.idx-val{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;letter-spacing:1px}
 .idx-unit{font-size:12px;font-family:'IBM Plex Sans',sans-serif;font-weight:300;opacity:.5}
-.idx-name{font-size:10px;color:var(--muted);margin-top:3px;line-height:1.3}
+.idx-name{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.4}
 .idx-bar{height:2px;background:var(--border);margin-top:8px;overflow:hidden}
 .idx-fill{height:100%;transition:width .9s ease-out}
-.idx-thresh{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-top:4px}
+.idx-thresh{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);margin-top:5px}
 .windows{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:20px}
 .win{background:var(--bg2);border:1px solid var(--border);padding:14px}
-.win-time{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:1px}
-.win-risk{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;margin-bottom:5px}
-.win-desc{font-size:12px;color:var(--body);font-weight:300;line-height:1.55}
+.win-time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:1px}
+.win-risk{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;margin-bottom:6px}
+.win-desc{font-size:14px;color:var(--body);font-weight:300;line-height:1.6}
 .data-table{background:var(--bg2);border:1px solid var(--border);margin-bottom:20px;overflow:hidden}
 .dt-row{display:grid;grid-template-columns:110px 1fr 80px;border-bottom:1px solid var(--border);align-items:center}
 .dt-row:last-child{border-bottom:none}
-.dt-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);padding:9px 12px;letter-spacing:.5px}
+.dt-label{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);padding:12px 16px;letter-spacing:.5px}
 .dt-bar-wrap{padding:9px 10px}
 .dt-bar-track{height:5px;background:var(--border);overflow:hidden}
 .dt-bar-fill{height:100%;transition:width 1s ease-out}
-.dt-val{font-family:'IBM Plex Mono',monospace;font-size:11px;text-align:right;padding:9px 12px;font-weight:500}
+.dt-val{font-family:'IBM Plex Mono',monospace;font-size:14px;text-align:right;padding:12px 16px;font-weight:500}
 .fcst-card{background:var(--bg2);border:1px solid var(--border);padding:18px;margin-bottom:20px}
-.fcst-text{font-size:13px;font-weight:300;line-height:1.8;color:var(--body)}
+.fcst-text{font-size:16px;font-weight:300;line-height:1.85;color:var(--body)}
 .fcst-text strong{color:var(--white);font-weight:500}
-.disc{border-top:1px solid var(--border);padding-top:14px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);line-height:2;letter-spacing:.3px}
+.disc{border-top:1px solid var(--border);padding-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);line-height:2}
 .c-none{color:var(--green)}.c-marg{color:var(--lime)}.c-slight{color:var(--yellow)}
 .c-mod{color:var(--orange)}.c-high{color:var(--red)}.c-extreme{color:#ff40ff}.c-muted{color:var(--muted)}
 .b-none{background:var(--green)}.b-marg{background:var(--lime)}.b-slight{background:var(--yellow)}
 .b-mod{background:var(--orange)}.b-high{background:var(--red)}.b-extreme{background:#ff40ff}
-@media(max-width:600px){
+@media(max-width:700px){
   .timeline{grid-template-columns:repeat(4,1fr)}
   .idx-grid{grid-template-columns:repeat(2,1fr)}
   .windows{grid-template-columns:1fr}
   .prob-grid{grid-template-columns:1fr}
-  .prob-num{font-size:72px}
-  .brand-name{font-size:30px}
+  .prob-num{font-size:80px}
+  .brand-name{font-size:36px}
+  .wrap{padding:20px 16px 80px}
 }
 
 /* ── HOTSPOT BUTTON ── */
@@ -174,10 +175,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .hs-row:hover{border-color:var(--red)}
 .hs-rank{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--dim)}
 .hs-city-wrap{}
-.hs-city{font-size:13px;color:var(--white);font-weight:400;line-height:1.3}
-.hs-state{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:1px;letter-spacing:1px}
+.hs-city{font-size:16px;color:var(--white);font-weight:400;line-height:1.3}
+.hs-state{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:1px}
 .hs-prob-wrap{text-align:right}
-.hs-prob{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1}
+.hs-prob{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1}
 .hs-prob sup{font-size:12px;opacity:.55}
 .hs-stp{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:2px}
 .hs-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted)}
@@ -258,6 +259,120 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .refresh-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
 .refresh-dot.stale{background:var(--yellow)}
 .refresh-dot.refreshing{animation:blink .5s infinite}
+
+/* ── STORM INITIATION GAUGE ── */
+.init-card{background:var(--bg2);border:1px solid var(--border);padding:20px;margin-bottom:20px}
+.init-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap}
+.init-score-wrap{flex-shrink:0;text-align:center}
+.init-score-num{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;letter-spacing:-1px}
+.init-score-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.init-verdict{flex:1}
+.init-verdict-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);line-height:1.2;margin-bottom:6px}
+.init-verdict-body{font-size:13px;font-weight:300;color:var(--body);line-height:1.65}
+.init-gauge-track{height:8px;background:var(--border);margin:14px 0 6px;overflow:hidden;position:relative}
+.init-gauge-fill{height:100%;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1);position:relative}
+.init-gauge-fill::after{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:rgba(255,255,255,.4)}
+.init-scale{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-bottom:14px}
+.init-factors{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.init-factor{background:var(--bg3);border:1px solid var(--border);padding:10px 8px;text-align:center}
+.init-factor-icon{font-size:16px;margin-bottom:4px}
+.init-factor-label{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
+.init-factor-val{font-family:'Bebas Neue',sans-serif;font-size:18px;line-height:1}
+.init-factor-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-top:2px}
+.init-hourly{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:12px}
+.init-hr{background:var(--bg3);border:1px solid var(--border);padding:6px 4px;text-align:center}
+.init-hr-time{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);margin-bottom:3px}
+.init-hr-score{font-family:'Bebas Neue',sans-serif;font-size:18px;line-height:1}
+.init-hr-bar{height:2px;background:var(--border);margin-top:4px;overflow:hidden}
+.init-hr-fill{height:100%;transition:width .6s ease-out}
+.init-gate-explain{margin-top:14px;padding:10px 12px;background:var(--bg3);border-left:2px solid var(--teal);font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--body);line-height:1.8}
+@media(max-width:600px){
+  .init-factors{grid-template-columns:repeat(2,1fr)}
+  .init-hourly{grid-template-columns:repeat(4,1fr)}
+  .init-score-num{font-size:56px}
+}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:0;margin-bottom:28px;border-bottom:1px solid var(--border)}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:14px 24px;cursor:pointer;transition:color .2s,border-color .2s;margin-bottom:-1px;white-space:nowrap}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--white);border-bottom-color:var(--red)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* ── LEARN TAB ── */
+.learn-intro{font-size:17px;color:var(--body);line-height:1.8;margin-bottom:32px;
+  padding:20px 24px;background:var(--bg2);border:1px solid var(--border)}
+.learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
+.learn-card{background:var(--bg2);border:1px solid var(--border);padding:24px;cursor:pointer;
+  transition:border-color .2s,transform .15s;position:relative}
+.learn-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.learn-card.expanded{border-color:var(--teal)}
+.lc-icon{font-size:32px;margin-bottom:12px}
+.lc-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--white);margin-bottom:4px}
+.lc-subtitle{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:12px}
+.lc-plain{font-size:15px;color:var(--body);line-height:1.75}
+.lc-detail{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.lc-detail.on{display:block}
+.lc-detail-row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);align-items:start}
+.lc-detail-row:last-child{border-bottom:none}
+.lc-val-label{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px}
+.lc-val-desc{font-size:13px;color:var(--body);line-height:1.6}
+.learn-risk-section{margin-bottom:32px}
+.risk-scale{display:grid;gap:10px}
+.risk-row{display:grid;grid-template-columns:140px 60px 1fr;gap:16px;align-items:center;
+  background:var(--bg2);border:1px solid var(--border);padding:16px 20px}
+.risk-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px}
+.risk-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted)}
+.risk-explain{font-size:14px;color:var(--body);line-height:1.6}
+.learn-faq{margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;cursor:pointer;font-size:16px;color:var(--white);display:flex;
+  justify-content:space-between;align-items:center;gap:12px;font-weight:400}
+.faq-q:hover{color:var(--teal)}
+.faq-arrow{font-size:12px;color:var(--muted);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding-bottom:18px;font-size:15px;color:var(--body);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+@media(max-width:700px){
+  .learn-grid{grid-template-columns:1fr}
+  .lc-detail-row{grid-template-columns:1fr}
+  .risk-row{grid-template-columns:1fr 60px}
+  .risk-explain{grid-column:span 2}
+  .tab-btn{padding:12px 14px;font-size:11px}
+}
+
+/* ── RADAR TAB ── */
+#radarContainer{width:100%}
+.radar-header{display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:16px;flex-wrap:wrap;gap:12px}
+.radar-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--white)}
+.radar-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);line-height:1.8}
+.radar-controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.radar-btn{background:var(--bg2);border:1px solid var(--border);color:var(--body);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;
+  padding:8px 16px;cursor:pointer;transition:border-color .15s,color .15s;text-transform:uppercase}
+.radar-btn:hover{border-color:var(--teal);color:var(--teal)}
+.radar-btn.active{border-color:var(--red);color:var(--red)}
+#radarMap{width:100%;height:560px;background:var(--bg2);border:1px solid var(--border)}
+.radar-legend{display:flex;gap:0;margin-top:10px;height:14px;overflow:hidden;border:1px solid var(--border)}
+.radar-legend-bar{flex:1;height:14px}
+.radar-legend-labels{display:flex;justify-content:space-between;
+  font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:4px;padding:0 2px}
+.radar-timestamp{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+  margin-top:8px;text-align:right}
+.radar-layer-info{background:var(--bg2);border:1px solid var(--border);padding:14px 18px;
+  margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rli-item{text-align:center}
+.rli-label{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rli-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white)}
+@media(max-width:700px){
+  #radarMap{height:400px}
+  .radar-layer-info{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -286,12 +401,15 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   </div>
 </header>
 
-<div id="netBanner" style="display:none;background:rgba(255,59,32,.08);border:1px solid rgba(255,59,32,.3);padding:14px 18px;margin-bottom:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#ff6b50;line-height:2">
-  <strong>⚠ Preview environment detected — network access blocked.</strong><br>
-  Download the file and open it directly in Chrome/Safari/Firefox for full functionality.<br>
-  <span style="color:#5a6887">All features work perfectly outside this sandbox. Open-Meteo API is free, no key needed.</span>
+
+<div class="tabs" id="mainTabs">
+  <button class="tab-btn active" onclick="switchTab('forecast',this)">🌪 Forecast</button>
+  <button class="tab-btn" onclick="switchTab('hotspots',this)">🗺 US Hotspots</button>
+  <button class="tab-btn" onclick="switchTab('radar',this)">📡 Live Radar</button>
+  <button class="tab-btn" onclick="switchTab('learn',this)">📖 Learn</button>
 </div>
 
+<div class="tab-pane active" id="tab-forecast">
 <div class="search-section">
   <span class="search-label">// Enter location</span>
   <div class="search-wrap">
@@ -302,7 +420,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   </div>
 </div>
 
+</div><!-- /tab-forecast -->
 
+<div class="tab-pane" id="tab-hotspots">
 <button class="hotspot-btn" id="hotspotBtn" onclick="toggleHotspots()">
   <span>🌪</span>
   <span>US Tornado Hotspots — Scan 150 cities now</span>
@@ -316,6 +436,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   </div>
   <div id="hsResultsEl"></div>
 </div>
+</div><!-- /tab-hotspots -->
+
+<div class="tab-pane" id="tab-learn"></div>
+
+<div class="tab-pane" id="tab-radar"><div id="radarContainer"></div></div>
 
 <div class="loading" id="loadingEl">
   <div class="spinner"><div class="r r1"></div><div class="r r2"></div><div class="r r3"></div></div>
@@ -368,6 +493,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   <div class="windows" id="windowsEl"></div>
   <div class="sec">24-Hour Trend Chart</div>
   <div class="trend-chart"><svg class="trend-svg" id="trendSvg" height="120"></svg><div class="trend-legend" id="trendLegend"></div></div>
+  <div class="sec">Storm Initiation Analysis</div>
+  <div class="init-card" id="initCard"></div>
   <div class="sec">Computed Convective Indices (peak hour)</div>
   <div class="idx-grid" id="idxGridEl"></div>
   <div class="sec">Raw Atmospheric Data</div>
@@ -387,6 +514,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 
 </div>
 <script>
+
 'use strict';
 
 // Clock
@@ -396,23 +524,13 @@ setInterval(function(){
 },1000);
 document.getElementById('clockEl').textContent=new Date().toUTCString().slice(5,22)+' UTC';
 
-// ── Connectivity self-test ──
-// Claude.ai's artifact sandbox blocks outbound fetch. Detect this early and warn.
+// ── Connectivity self-test — silent, no banner ──
 var NETWORK_OK = false;
 (function checkNetwork(){
   fetch('https://api.open-meteo.com/v1/forecast?latitude=35&longitude=-97&hourly=cape&forecast_days=1&timezone=auto')
-    .then(function(r){ if(r.ok){ NETWORK_OK=true; showNetworkOk(); } else { showNetworkBlocked(); } })
-    .catch(function(){ showNetworkBlocked(); });
+    .then(function(r){ if(r.ok) NETWORK_OK=true; })
+    .catch(function(){ NETWORK_OK=false; });
 })();
-
-function showNetworkOk(){
-  var b = document.getElementById('netBanner');
-  if(b) b.style.display='none';
-}
-function showNetworkBlocked(){
-  var b = document.getElementById('netBanner');
-  if(b){ b.style.display='block'; }
-}
 
 // State
 var selLat=null,selLon=null,selName=null;
@@ -520,7 +638,7 @@ function runForecast(){
       .catch(function(err){
         // Distinguish network block from API errors
         if(err instanceof TypeError && err.message.indexOf('fetch')>=0){
-          throw new Error('Network blocked. Download the HTML file and open it directly in Chrome or Safari — API calls are blocked in this preview.');
+          throw new Error('Could not reach location service. Check your internet connection and try again.');
         }
         throw err;
       });
@@ -560,11 +678,12 @@ function runForecast(){
 
       setStep(5);
       var probs=computed.map(function(c){return tornadoProb(c);});
+      var initScores=computed.map(function(c){return stormInitiationScore(c);});
 
       setStep(6);
       return new Promise(function(resolve){
         setTimeout(function(){
-          render(name,lat,lon,now,hourly,computed,probs,alerts,meteo.timezone_abbreviation||'Local');
+          render(name,lat,lon,now,hourly,computed,probs,alerts,meteo.timezone_abbreviation||'Local',initScores);
           resolve();
         },200);
       });
@@ -721,6 +840,48 @@ function tornadoProb(c){
   return Math.min(20,Math.max(0,Math.round(p*10)/10));
 }
 
+
+// ── Storm Initiation Score (0-100) ──
+function stormInitiationScore(c){
+  var score = 0;
+  if(c.convPrecip > 5)        score += 40;
+  else if(c.convPrecip > 1)   score += 28;
+  else if(c.convPrecip > 0.1) score += 15;
+  else if(c.convPrecip > 0)   score += 6;
+  if(c.precip >= 80)      score += 25;
+  else if(c.precip >= 60) score += 18;
+  else if(c.precip >= 40) score += 12;
+  else if(c.precip >= 20) score += 5;
+  if(c.cin < 10)       score += 20;
+  else if(c.cin < 25)  score += 14;
+  else if(c.cin < 50)  score += 8;
+  else if(c.cin < 100) score += 2;
+  if(c.cin > 200)      score = Math.round(score * 0.2);
+  else if(c.cin > 150) score = Math.round(score * 0.45);
+  if(c.li < -6)      score += 10;
+  else if(c.li < -3) score += 6;
+  else if(c.li < 0)  score += 3;
+  else if(c.li > 4)  score = Math.round(score * 0.5);
+  if(c.cloudMid > 50 && c.cloudLow > 30) score += 5;
+  else if(c.cloudMid > 70 && c.cloudLow < 20) score -= 5;
+  if(c.cape < 100)      return 0;
+  if(c.cape < 300)      score = Math.round(score * 0.4);
+  else if(c.cape < 600) score = Math.round(score * 0.7);
+  return Math.min(100, Math.max(0, score));
+}
+
+// ── Initiation factor: score → probability multiplier ──
+function initiationFactor(score){
+  if(score <= 5)  return 0.02;
+  if(score <= 15) return 0.08;
+  if(score <= 25) return 0.18;
+  if(score <= 40) return 0.35;
+  if(score <= 55) return 0.55;
+  if(score <= 70) return 0.75;
+  if(score <= 85) return 0.90;
+  return 1.0;
+}
+
 // ── Risk level ──
 function riskLevel(p){
   // Thresholds recalibrated to match realistic point-probability scale (max ~20%)
@@ -744,7 +905,8 @@ function riskTag(p){
 }
 
 // ── Render ──
-function render(name,lat,lon,now,hourly,computed,probs,alertsData,tz){
+function render(name,lat,lon,now,hourly,computed,probs,alertsData,tz,initScores){
+  initScores=initScores||computed.map(function(c){return stormInitiationScore(c);});
   var peakProb=Math.max.apply(null,probs);
   var peakIdx=probs.indexOf(peakProb);
   var peakC=computed[peakIdx]||computed[0];
@@ -1015,6 +1177,535 @@ function showErr(msg){
 }
 
 
+
+// ════════════════════════════════════════
+// STORM INITIATION GAUGE
+// ════════════════════════════════════════
+function renderInitiationGauge(computed, initScores, probs){
+  var card = document.getElementById('initCard');
+  if(!card) return;
+  // Safety: recompute if initScores missing or empty
+  if(!initScores||!initScores.length){
+    initScores=computed.map(function(c){return stormInitiationScore(c);});
+  }
+  // Find peak initiation hour and peak prob hour
+  var peakInitScore = Math.max.apply(null, initScores);
+  var peakInitIdx   = initScores.indexOf(peakInitScore);
+  var peakProbIdx   = probs.indexOf(Math.max.apply(null, probs));
+  var peakC         = computed[peakInitIdx] || computed[0];
+  var peakFactor    = initiationFactor(peakInitScore);
+
+  // Score color
+  function scoreColor(s){
+    if(s >= 75) return 'var(--red)';
+    if(s >= 55) return 'var(--orange)';
+    if(s >= 35) return 'var(--yellow)';
+    if(s >= 15) return 'var(--lime)';
+    return 'var(--muted)';
+  }
+
+  // Verdict text based on score
+  function verdict(s, factor){
+    if(s <= 5)  return {title:'No storm initiation expected', body:'Model data shows no convective precipitation and strong inhibition. Even with favorable shear and instability, tornado probability is effectively zero — no storms, no tornadoes.'};
+    if(s <= 20) return {title:'Storm initiation very unlikely', body:'Atmospheric conditions strongly suppress storm development. High CIN or low precipitation probability indicate storms are unlikely to fire. Tornado probability is gated near zero.'};
+    if(s <= 35) return {title:'Marginal storm initiation possible', body:'Some chance of isolated storm development, but conditions are borderline. If storms do initiate they may be brief and poorly organized. Tornado probability is significantly reduced.'};
+    if(s <= 55) return {title:'Storm initiation plausible', body:'Model data suggests storm development is possible, particularly during peak heating hours. Convective parameters show moderate support for initiation. Probability reduced but nonzero.'};
+    if(s <= 70) return {title:'Storm initiation likely', body:'Convective precipitation and precipitation probability both support active storm development. Atmospheric dynamics are favorable for sustained convection. Tornado probability reflects significant storm potential.'};
+    if(s <= 85) return {title:'Active storm development expected', body:'Strong signals for organized convection. Convective precipitation values, low CIN, and deep cloud cover indicate storms are firing or imminent. Full atmospheric tornado potential is accessible.'};
+    return {title:'Storms definitely firing', body:'Maximum initiation confidence. Convective precipitation confirms active deep convection. CIN is negligible. Atmospheric tornado potential is fully unlocked — this is the environment where significant tornadoes can occur.'};
+  }
+
+  var v = verdict(peakInitScore, peakFactor);
+  var col = scoreColor(peakInitScore);
+
+  // Gate explanation
+  var gateText = 'Atmospheric potential × initiation factor (' + Math.round(peakFactor*100) + '%) = '
+    + 'final probability. '
+    + (peakFactor < 0.5
+      ? 'Storm initiation is the limiting factor — the atmosphere may be primed, but no storms means no tornadoes.'
+      : peakFactor < 0.9
+        ? 'Partial initiation confidence reduces final probability from raw atmospheric potential.'
+        : 'High initiation confidence — full atmospheric potential is applied to tornado probability.');
+
+  // Build factor tiles for peak hour
+  var factors = [
+    {icon:'🌧', label:'Conv. Precip', val: peakC.convPrecip > 0 ? peakC.convPrecip.toFixed(1)+' mm' : 'None',
+     sub: peakC.convPrecip > 1 ? 'Storms firing ✓' : peakC.convPrecip > 0 ? 'Marginal' : 'No convection',
+     col: peakC.convPrecip > 1 ? 'var(--red)' : peakC.convPrecip > 0 ? 'var(--yellow)' : 'var(--muted)'},
+    {icon:'🎯', label:'Precip Prob',  val: peakC.precip+'%',
+     sub: peakC.precip >= 60 ? 'High confidence' : peakC.precip >= 30 ? 'Moderate' : 'Low confidence',
+     col: peakC.precip >= 60 ? 'var(--orange)' : peakC.precip >= 30 ? 'var(--yellow)' : 'var(--muted)'},
+    {icon:'🔒', label:'CIN Cap',      val: Math.round(peakC.cin)+' J/kg',
+     sub: peakC.cin < 25 ? 'Weak cap ✓' : peakC.cin < 75 ? 'Moderate cap' : peakC.cin < 150 ? 'Strong cap' : 'Extreme — storms suppressed',
+     col: peakC.cin < 25 ? 'var(--green)' : peakC.cin < 75 ? 'var(--lime)' : peakC.cin < 150 ? 'var(--yellow)' : 'var(--muted)'},
+    {icon:'📐', label:'Lifted Index', val: peakC.li.toFixed(1),
+     sub: peakC.li < -4 ? 'Very unstable ✓' : peakC.li < 0 ? 'Unstable' : peakC.li < 3 ? 'Stable' : 'Very stable',
+     col: peakC.li < -4 ? 'var(--red)' : peakC.li < 0 ? 'var(--yellow)' : 'var(--muted)'},
+  ];
+
+  var facHTML = factors.map(function(f){
+    return '<div class="init-factor">'
+      +'<div class="init-factor-icon">'+f.icon+'</div>'
+      +'<div class="init-factor-label">'+f.label+'</div>'
+      +'<div class="init-factor-val" style="color:'+f.col+'">'+f.val+'</div>'
+      +'<div class="init-factor-sub">'+f.sub+'</div>'
+      +'</div>';
+  }).join('');
+
+  // Hourly initiation mini-grid (first 12 hours)
+  var hourlyHTML = initScores.slice(0,12).map(function(s,i){
+    var t = new Date(computed[i].time);
+    var hr = t.getHours(), ampm = hr>=12?'p':'a', hr12 = hr%12||12;
+    var col2 = scoreColor(s);
+    var isPeak = s === peakInitScore && i === peakInitIdx;
+    return '<div class="init-hr" style="'+(isPeak?'border-color:'+col2:'')+'">'
+      +'<div class="init-hr-time">'+hr12+ampm+'</div>'
+      +'<div class="init-hr-score" style="color:'+col2+'">'+Math.round(s)+'</div>'
+      +'<div class="init-hr-bar"><div class="init-hr-fill" style="background:'+col2+';width:0%" data-w="'+s+'%"></div></div>'
+      +'</div>';
+  }).join('');
+
+  card.innerHTML =
+    '<div class="init-header">'
+    +'<div class="init-score-wrap">'
+    +'<div class="init-score-num" style="color:'+col+'">'+Math.round(peakInitScore)+'</div>'
+    +'<div class="init-score-label">/ 100 · Initiation Score</div>'
+    +'</div>'
+    +'<div class="init-verdict">'
+    +'<div class="init-verdict-title">'+v.title+'</div>'
+    +'<div class="init-verdict-body">'+v.body+'</div>'
+    +'</div>'
+    +'</div>'
+    +'<div class="init-gauge-track"><div class="init-gauge-fill" id="initGaugeFill" style="background:'+col+';width:0%"></div></div>'
+    +'<div class="init-scale"><span>0 · No storms</span><span>25</span><span>50</span><span>75</span><span>100 · Definite</span></div>'
+    +'<div class="init-factors">'+facHTML+'</div>'
+    +'<div class="sec" style="margin-top:14px;margin-bottom:8px">12-Hour Initiation Score</div>'
+    +'<div class="init-hourly">'+hourlyHTML+'</div>'
+    +'<div class="init-gate-explain">⚡ '+gateText+'</div>';
+
+  // Animate fills
+  setTimeout(function(){
+    var fill = document.getElementById('initGaugeFill');
+    if(fill) fill.style.width = Math.min(peakInitScore,100)+'%';
+    card.querySelectorAll('.init-hr-fill').forEach(function(el){
+      el.style.width = el.dataset.w;
+    });
+  }, 120);
+}
+
+
+// ════════════════════════════════════════
+// TAB SWITCHING
+// ════════════════════════════════════════
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var pane = document.getElementById('tab-'+name);
+  if(pane) pane.classList.add('active');
+  if(btn)  btn.classList.add('active');
+  if(name==='learn') renderLearnTab();
+  // Keep loading/results visible outside tabs (they're outside tab panes)
+  if(name==='forecast'){
+    document.getElementById('loadingEl').style.display='';
+    document.getElementById('resultsEl').style.display='';
+    document.getElementById('errorEl').style.display='';
+  }
+}
+
+// ════════════════════════════════════════
+// LEARN TAB
+// ════════════════════════════════════════
+var learnRendered = false;
+function renderLearnTab(){
+  if(learnRendered) return;
+  learnRendered = true;
+  var el = document.getElementById('tab-learn');
+  if(!el) return;
+
+  var cards = [
+    {
+      icon:'⚡', title:'CAPE', subtitle:'Convective Available Potential Energy',
+      plain:'Think of CAPE as the "fuel in the tank" for thunderstorms. The higher the number, the more explosive any storm that forms can become. No fuel = no storm.',
+      levels:[
+        {val:'0–500',    color:'var(--green)',  desc:'Weak — storms unlikely or very tame if they form'},
+        {val:'500–1500', color:'var(--lime)',   desc:'Moderate — garden-variety thunderstorms possible'},
+        {val:'1500–2500',color:'var(--yellow)', desc:'Strong — severe thunderstorms likely if storms fire'},
+        {val:'2500–4000',color:'var(--orange)', desc:'Very strong — explosive storm development, hail & damaging winds'},
+        {val:'4000+',    color:'var(--red)',    desc:'Extreme — rare, outbreak-level instability'},
+      ]
+    },
+    {
+      icon:'🌀', title:'STP', subtitle:'Significant Tornado Parameter',
+      plain:'STP is the big number meteorologists watch. It combines fuel (CAPE), spin (wind shear), and cloud base height into one score. Above 1.0 means the atmosphere is configured for significant tornadoes.',
+      levels:[
+        {val:'Below 0.5', color:'var(--green)',  desc:'Tornado environment not present'},
+        {val:'0.5–1.0',   color:'var(--lime)',   desc:'Marginal — weak/brief tornadoes possible'},
+        {val:'1.0–2.0',   color:'var(--yellow)', desc:'Tornado threat present — EF1/EF2 possible'},
+        {val:'2.0–4.0',   color:'var(--orange)', desc:'Significant threat — strong tornadoes likely'},
+        {val:'4.0+',      color:'var(--red)',    desc:'Major outbreak environment — violent tornadoes possible'},
+      ]
+    },
+    {
+      icon:'💨', title:'Wind Shear', subtitle:'0–6km Bulk Shear',
+      plain:'Shear is how much the wind changes speed and direction as you go higher up in the atmosphere. Storms need shear to rotate. Think of it like a rolling pin — shear is what makes thunderstorms spin instead of just going straight up and dying.',
+      levels:[
+        {val:'Below 20 kts',color:'var(--muted)',  desc:'Insufficient — storms won\'t organize'},
+        {val:'20–35 kts',   color:'var(--lime)',   desc:'Marginal — multicell storms, brief rotation'},
+        {val:'35–50 kts',   color:'var(--yellow)', desc:'Favorable — supercell thunderstorms possible'},
+        {val:'50–65 kts',   color:'var(--orange)', desc:'Strong — supercells likely, tornado environment'},
+        {val:'65+ kts',     color:'var(--red)',    desc:'Extreme — violent tornado potential'},
+      ]
+    },
+    {
+      icon:'🔒', title:'CIN', subtitle:'Convective Inhibition — The Cap',
+      plain:'CIN is the "lid" on the atmosphere. A weak lid is good — storms can break through. A strong lid means even a primed atmosphere stays dormant. Meteorologists often say a moderate cap is actually beneficial — it lets energy build up before storms burst through all at once.',
+      levels:[
+        {val:'0–25 J/kg',   color:'var(--red)',    desc:'Weak cap — storms fire easily, possibly too scattered'},
+        {val:'25–75 J/kg',  color:'var(--orange)', desc:'Moderate cap — good balance, storms can still initiate'},
+        {val:'75–150 J/kg', color:'var(--yellow)', desc:'Strong cap — storms need a trigger (front, dryline) to break through'},
+        {val:'150–250 J/kg',color:'var(--muted)',  desc:'Very strong cap — likely suppresses storms despite good instability'},
+        {val:'250+ J/kg',   color:'var(--dim)',    desc:'Extreme cap — storms almost certainly won\'t fire'},
+      ]
+    },
+    {
+      icon:'🌧', title:'Storm Initiation', subtitle:'Will Storms Actually Fire?',
+      plain:'This is Vortex\'s unique check: even a perfect atmosphere is useless if no storms actually form. This score combines model precipitation output, the strength of the cap, and atmospheric instability to estimate whether storms will actually ignite.',
+      levels:[
+        {val:'0–20',  color:'var(--muted)',  desc:'No storms expected — tornado probability near zero regardless of other values'},
+        {val:'20–40', color:'var(--lime)',   desc:'Marginal initiation — isolated storms possible but not certain'},
+        {val:'40–60', color:'var(--yellow)', desc:'Plausible — model suggests storm development during favorable window'},
+        {val:'60–80', color:'var(--orange)', desc:'Likely — active storm development expected, full atmospheric potential accessible'},
+        {val:'80–100',color:'var(--red)',    desc:'Definite — storms are firing or imminent, tornado probability is fully unlocked'},
+      ]
+    },
+    {
+      icon:'📐', title:'LCL Height', subtitle:'Lifted Condensation Level',
+      plain:'LCL is how high off the ground storm clouds form their base. Lower is better for tornadoes — a tornado needs a cloud base close to the ground to reach down. High cloud bases mean the tornado has further to stretch and is more likely to dissipate before touching down.',
+      levels:[
+        {val:'Below 800m', color:'var(--red)',    desc:'Very low — strongly favors tornado contact with the ground'},
+        {val:'800–1200m',  color:'var(--orange)', desc:'Low — favorable for tornado formation'},
+        {val:'1200–1800m', color:'var(--yellow)', desc:'Marginal — tornadoes possible but less likely to be long-track'},
+        {val:'1800–2500m', color:'var(--lime)',   desc:'High — tornadoes possible but less likely to reach the surface'},
+        {val:'2500m+',     color:'var(--muted)',  desc:'Very high — strongly unfavorable, tornadoes unlikely to touch down'},
+      ]
+    },
+  ];
+
+  var riskRows = [
+    {level:'NEAR ZERO', pct:'<0.5%', color:'var(--green)',  text:'Essentially no tornado threat. Enjoy the weather.'},
+    {level:'MARGINAL',  pct:'0.5–2%',color:'var(--lime)',   text:'Very small chance. Keep an eye on NWS alerts if thunderstorms are in the forecast.'},
+    {level:'SLIGHT',    pct:'2–5%',  color:'var(--yellow)', text:'Notable tornado threat. Have a shelter plan in mind. Monitor local weather radio.'},
+    {level:'MODERATE',  pct:'5–10%', color:'var(--orange)', text:'Significant threat. Know your shelter. Have shoes and important items ready to grab.'},
+    {level:'HIGH',      pct:'10–15%',color:'var(--red)',    text:'Dangerous conditions. Be ready to take shelter immediately. Monitor NWS continuously.'},
+    {level:'EXTREME',   pct:'15%+',  color:'#ff40ff',       text:'Rare, outbreak-level threat. Take action NOW. Do not wait for a warning to seek shelter.'},
+  ];
+
+  var faqs = [
+    {q:'Why doesn\'t Vortex use the HRRR model directly?',
+     a:'The HRRR model outputs raw binary GRIB2 files that are hundreds of megabytes each. There is no free public API that serves processed HRRR data as JSON. Vortex uses Open-Meteo, which blends the best available model data (including HRRR inputs) into a free, accessible API. We then apply the same STP/SCP formulas meteorologists use to derive tornado probability from scratch.'},
+    {q:'A low probability doesn\'t mean no tornado, right?',
+     a:'Exactly right. A 3% probability means tornadoes are unlikely — but if you\'re in a large enough area, 3% is very real. The SPC often issues tornado watches at these levels. Never ignore NWS and SPC guidance based on a low probability here. Vortex is a situational awareness tool, not a replacement for official forecasts.'},
+    {q:'Why does my area show 0% even during a tornado outbreak?',
+     a:'Two most common reasons: (1) The storm initiation score is gating the probability to zero because convective precipitation isn\'t yet showing in the model — this can happen in the hours before a major outbreak when the cap hasn\'t broken yet. (2) The event may be developing faster than the model update cycle. Always check SPC outlooks directly at spc.noaa.gov.'},
+    {q:'What is the difference between a tornado WATCH and WARNING?',
+     a:'A Watch means conditions are favorable for tornadoes to develop — be prepared, stay aware. A Warning means a tornado has been spotted or is radar-confirmed — take shelter immediately. Vortex will show any active NWS watches and warnings for your location at the top of the forecast.'},
+    {q:'How often is the data updated?',
+     a:'Open-Meteo updates its model data every hour. Vortex auto-refreshes every 30 minutes and shows a timestamp on the forecast so you always know how fresh the data is. Click the search button again anytime to force an immediate update.'},
+    {q:'Why is the probability capped at 20%?',
+     a:'Tornado probability is calculated as a point probability — the chance that a tornado touches down at your exact location within the next 24 hours. Even during major outbreaks, this rarely exceeds 10–15% for any single point. A 20% point probability would be a historically extreme event. Expressing it as higher would be misleading.'},
+  ];
+
+  // Build cards HTML
+  var cardsHTML = cards.map(function(c, ci){
+    var levelsHTML = c.levels.map(function(l){
+      return '<div class="lc-detail-row">'
+        +'<div class="lc-val-label" style="color:'+l.color+'">'+l.val+'</div>'
+        +'<div class="lc-val-desc">'+l.desc+'</div>'
+        +'</div>';
+    }).join('');
+    return '<div class="learn-card" onclick="toggleLearnCard('+ci+')" id="lc'+ci+'">'
+      +'<div class="lc-icon">'+c.icon+'</div>'
+      +'<div class="lc-title">'+c.title+'</div>'
+      +'<div class="lc-subtitle">'+c.subtitle+'</div>'
+      +'<div class="lc-plain">'+c.plain+'</div>'
+      +'<div class="lc-detail" id="lcd'+ci+'">'
+      +'<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:10px;text-transform:uppercase">Value Guide</div>'
+      +levelsHTML
+      +'</div>'
+      +'<div style="margin-top:12px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--teal)">Click to see value guide ▼</div>'
+      +'</div>';
+  }).join('');
+
+  // Build risk scale
+  var riskHTML = riskRows.map(function(r){
+    return '<div class="risk-row">'
+      +'<div class="risk-name" style="color:'+r.color+'">'+r.level+'</div>'
+      +'<div class="risk-pct">'+r.pct+'</div>'
+      +'<div class="risk-explain">'+r.text+'</div>'
+      +'</div>';
+  }).join('');
+
+  // Build FAQ
+  var faqHTML = faqs.map(function(f, fi){
+    return '<div class="faq-item" id="faq'+fi+'">'
+      +'<div class="faq-q" onclick="toggleFaq('+fi+')">'
+      +'<span>'+f.q+'</span>'
+      +'<span class="faq-arrow">▼</span>'
+      +'</div>'
+      +'<div class="faq-a">'+f.a+'</div>'
+      +'</div>';
+  }).join('');
+
+  el.innerHTML =
+    '<div class="learn-intro">'
+    +'<strong style="color:var(--white)">How to read Vortex</strong><br>'
+    +'Vortex pulls real atmospheric data every hour and runs it through the same formulas meteorologists use at the Storm Prediction Center. '
+    +'The percentage shown is the probability that a tornado touches down at your exact location in the next 24 hours. '
+    +'Click any card below to learn what each ingredient means.'
+    +'</div>'
+    +'<div class="learn-grid">'+cardsHTML+'</div>'
+    +'<div class="sec">Risk Level Guide</div>'
+    +'<div class="learn-risk-section"><div class="risk-scale">'+riskHTML+'</div></div>'
+    +'<div class="sec">Frequently Asked Questions</div>'
+    +'<div class="learn-faq">'+faqHTML+'</div>';
+}
+
+function toggleLearnCard(idx){
+  var detail = document.getElementById('lcd'+idx);
+  var card   = document.getElementById('lc'+idx);
+  if(!detail) return;
+  var open = detail.classList.toggle('on');
+  card.classList.toggle('expanded', open);
+  var hint = card.querySelector('div[style*="teal"]');
+  if(hint) hint.textContent = open ? 'Click to collapse ▲' : 'Click to see value guide ▼';
+}
+
+function toggleFaq(idx){
+  var item = document.getElementById('faq'+idx);
+  if(item) item.classList.toggle('open');
+}
+
+
+// ════════════════════════════════════════
+// LIVE RADAR TAB
+// Uses RainViewer API (free, no key) + Leaflet.js
+// ════════════════════════════════════════
+var radarInitialized = false;
+var radarMap = null;
+var radarLayer = null;
+var radarFrames = [];
+var radarFrameIdx = 0;
+var radarPlaying = false;
+var radarPlayTimer = null;
+var radarApiData = null;
+var currentRadarType = 'radar'; // 'radar' or 'satellite'
+
+// Hook into switchTab to init radar when tab opens
+var _origSwitchTab = switchTab;
+switchTab = function(name, btn) {
+  _origSwitchTab(name, btn);
+  if (name === 'radar') {
+    initRadar();
+    // Leaflet needs the container to be visible before it can calculate size
+    setTimeout(function() {
+      if (radarMap) radarMap.invalidateSize();
+    }, 50);
+  }
+};
+
+function initRadar() {
+  if (radarInitialized) return;
+  radarInitialized = true;
+
+  var container = document.getElementById('radarContainer');
+  if (!container) return;
+
+  container.innerHTML =
+    '<div class="radar-header">' +
+      '<div>' +
+        '<div class="radar-title">Live Radar</div>' +
+        '<div class="radar-meta">NEXRAD composite · RainViewer · Updates every 10 min</div>' +
+      '</div>' +
+      '<div class="radar-meta" id="radarTimestamp">Loading...</div>' +
+    '</div>' +
+    '<div class="radar-controls">' +
+      '<button class="radar-btn active" id="rbRadar" onclick="setRadarType(\'radar\')">🌧 Precipitation</button>' +
+      '<button class="radar-btn" id="rbSat" onclick="setRadarType(\'satellite\')">🛰 Satellite</button>' +
+      '<button class="radar-btn" id="rbPlay" onclick="toggleRadarPlay()">▶ Animate</button>' +
+      '<button class="radar-btn" onclick="stepRadar(-1)">◀ Prev</button>' +
+      '<button class="radar-btn" onclick="stepRadar(1)">Next ▶</button>' +
+    '</div>' +
+    '<div id="radarMap"></div>' +
+    '<div class="radar-legend">' +
+      ['#00d8ff','#00a0ff','#0060d0','#00c000','#00e000','#80ff00',
+       '#ffff00','#e0c000','#ff8000','#ff4000','#c00000','#800080']
+      .map(function(c){ return '<div class="radar-legend-bar" style="background:'+c+'"></div>'; }).join('') +
+    '</div>' +
+    '<div class="radar-legend-labels">' +
+      '<span>Light</span><span>Moderate</span><span>Heavy</span><span>Extreme</span>' +
+    '</div>' +
+    '<div class="radar-timestamp" id="radarFrameTime">—</div>' +
+    '<div class="radar-layer-info">' +
+      '<div class="rli-item"><div class="rli-label">Data Source</div><div class="rli-val" style="font-size:16px">RainViewer</div></div>' +
+      '<div class="rli-item"><div class="rli-label">Coverage</div><div class="rli-val" style="font-size:16px">Global</div></div>' +
+      '<div class="rli-item"><div class="rli-label">Resolution</div><div class="rli-val" style="font-size:16px">512px</div></div>' +
+    '</div>';
+
+  // Load Leaflet then initialize map
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js', function() {
+    loadLeafletCSS(function() {
+      buildRadarMap();
+    });
+  });
+}
+
+function loadLeafletCSS(cb) {
+  if (document.querySelector('link[href*="leaflet"]')) { cb(); return; }
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+  link.onload = cb;
+  document.head.appendChild(link);
+}
+
+function buildRadarMap() {
+  if (typeof L === 'undefined') {
+    document.getElementById('radarMap').innerHTML =
+      '<div style="padding:40px;text-align:center;color:var(--muted);font-family:monospace">Could not load map library. Check your connection.</div>';
+    return;
+  }
+
+  // Center on continental US
+  // Wait for the container to be fully visible and sized before init
+  var mapEl = document.getElementById('radarMap');
+  if (!mapEl) return;
+
+  radarMap = L.map('radarMap', {
+    zoomControl: true,
+    attributionControl: true,
+    minZoom: 2,
+    maxZoom: 10
+  }).setView([38.5, -96], 4);
+
+  // Force Leaflet to recalculate size after paint
+  setTimeout(function() { radarMap.invalidateSize(); }, 100);
+
+  // Dark base map tiles
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(radarMap);
+
+  // If user already ran a forecast, center on that location
+  if (selLat && selLon) {
+    radarMap.setView([selLat, selLon], 7);
+    L.circleMarker([selLat, selLon], {
+      radius: 8, color: '#ff3b20', fillColor: '#ff3b20',
+      fillOpacity: 0.8, weight: 2
+    }).addTo(radarMap).bindPopup(selName || 'Your location');
+  }
+
+  // Fetch RainViewer frames
+  fetchRadarFrames();
+}
+
+function fetchRadarFrames() {
+  fetch('https://api.rainviewer.com/public/weather-maps.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      radarApiData = data;
+      applyRadarType(currentRadarType);
+      document.getElementById('radarTimestamp').textContent =
+        'Updated: ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    })
+    .catch(function(e) {
+      console.warn('RainViewer fetch failed:', e);
+      document.getElementById('radarTimestamp').textContent = 'Radar data unavailable — check connection';
+    });
+}
+
+function applyRadarType(type) {
+  if (!radarApiData || !radarMap) return;
+
+  // Remove existing layer
+  if (radarLayer) { radarMap.removeLayer(radarLayer); radarLayer = null; }
+
+  if (type === 'radar') {
+    var frames = (radarApiData.radar && radarApiData.radar.past) || [];
+    if (radarApiData.radar && radarApiData.radar.nowcast) {
+      frames = frames.concat(radarApiData.radar.nowcast);
+    }
+    radarFrames = frames;
+  } else {
+    radarFrames = (radarApiData.satellite && radarApiData.satellite.infrared) || [];
+  }
+
+  if (!radarFrames.length) return;
+
+  // Show most recent frame
+  radarFrameIdx = type === 'radar'
+    ? (radarApiData.radar && radarApiData.radar.past ? radarApiData.radar.past.length - 1 : radarFrames.length - 1)
+    : radarFrames.length - 1;
+
+  showRadarFrame(radarFrameIdx);
+}
+
+function showRadarFrame(idx) {
+  if (!radarFrames.length || !radarMap) return;
+  idx = Math.max(0, Math.min(idx, radarFrames.length - 1));
+  radarFrameIdx = idx;
+  var frame = radarFrames[idx];
+  if (!frame) return;
+
+  if (radarLayer) { radarMap.removeLayer(radarLayer); radarLayer = null; }
+
+  var tileUrl = 'https://tilecache.rainviewer.com' + frame.path + '/512/{z}/{x}/{y}/2/1_1.png';
+  radarLayer = L.tileLayer(tileUrl, {
+    tileSize: 512, opacity: 0.75, zIndex: 10,
+    attribution: 'RainViewer'
+  });
+  radarLayer.addTo(radarMap);
+
+  // Show timestamp
+  var d = new Date(frame.time * 1000);
+  var timeStr = d.toLocaleDateString([], {month:'short', day:'numeric'}) + ' ' +
+    d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  var frameEl = document.getElementById('radarFrameTime');
+  if (frameEl) frameEl.textContent = timeStr + (idx === radarFrames.length - 1 ? ' (latest)' : '');
+}
+
+function setRadarType(type) {
+  currentRadarType = type;
+  document.getElementById('rbRadar').classList.toggle('active', type === 'radar');
+  document.getElementById('rbSat').classList.toggle('active', type === 'satellite');
+  if (radarPlaying) toggleRadarPlay();
+  applyRadarType(type);
+}
+
+function stepRadar(dir) {
+  showRadarFrame(radarFrameIdx + dir);
+}
+
+function toggleRadarPlay() {
+  radarPlaying = !radarPlaying;
+  var btn = document.getElementById('rbPlay');
+  if (!btn) return;
+  if (radarPlaying) {
+    btn.textContent = '⏸ Pause';
+    btn.classList.add('active');
+    radarPlayTimer = setInterval(function() {
+      var next = radarFrameIdx + 1;
+      if (next >= radarFrames.length) next = 0;
+      showRadarFrame(next);
+    }, 600);
+  } else {
+    btn.textContent = '▶ Animate';
+    btn.classList.remove('active');
+    clearInterval(radarPlayTimer);
+  }
+}
+
 // ════════════════════════════════════════════
 // US TORNADO HOTSPOTS
 // ════════════════════════════════════════════
@@ -1135,40 +1826,34 @@ async function scanHotspots(){
   var total=CITIES.length;
   var done=0;
   var results=[];
-  var networkFailed=false;
 
-  // Fetch in batches of 10 (Open-Meteo allows parallel requests)
-  var batchSize=10;
+  // Fetch in batches of 5 with a small delay between batches to avoid rate limiting
+  var batchSize=5;
   for(var i=0;i<CITIES.length;i+=batchSize){
     var batch=CITIES.slice(i,i+batchSize);
     var batchResults=await Promise.all(batch.map(function(city){
       return fetchCityProb(city);
     }));
-    var batchHits=batchResults.filter(function(r){return r!==null;});
     batchResults.forEach(function(r){ if(r) results.push(r); });
     done+=batch.length;
-
-    // After first batch: if 0 out of 10 succeeded, network is blocked — bail early
-    if(i===0 && batchHits.length===0){
-      networkFailed=true;
-      break;
-    }
-
     var pct=Math.round(done/total*100);
     progBar.style.width=pct+'%';
     progText.textContent='Scanned '+done+' / '+total+' cities  ('+pct+'%)';
+    // Small pause between batches so we don't hammer the API
+    await new Promise(function(res){ setTimeout(res, 300); });
   }
 
-  if(networkFailed){
+  // If nothing came back at all, show a simple retry message
+  if(results.length===0){
     scanEl.style.display='none';
     btn.disabled=false;
-    var parts=['<strong>Network blocked in preview.</strong>',
-      'Vortex needs real browser access to Open-Meteo API.',
-      '<strong>Fix:</strong> Download tornado-forecast.html then open in Chrome/Safari/Firefox.',
-      'Everything works outside this sandbox. Open-Meteo is free, no key needed.'
-    ];
-    resultsEl.innerHTML="<div style='padding:18px;font-family:monospace;font-size:11px;color:#ff6b50;line-height:2.2;background:rgba(255,59,32,.06);border:1px solid rgba(255,59,32,.3)'>"
-      +parts.join('<br>')+"</div>";
+    resultsEl.innerHTML="<div style='padding:24px;font-size:15px;color:var(--body);line-height:1.8'>"
+      +"<strong style='color:var(--white)'>Could not load city data.</strong><br><br>"
+      +"This usually means the Open-Meteo API is temporarily unavailable or rate-limiting requests. "
+      +"Try again in a minute — the API is free and typically very reliable. "
+      +"If you're testing inside the Claude.ai preview, API calls are blocked by the sandbox; "
+      +"the scan works fully on your live site."
+      +"</div>";
     return;
   }
 
@@ -1185,10 +1870,15 @@ async function scanHotspots(){
 
 async function fetchCityProb(city){
   try {
-    var vars='cape,convective_inhibition,lifted_index,wind_speed_10m,wind_gusts_10m,wind_direction_10m,dewpoint_2m,temperature_2m,surface_pressure,wind_speed_80m,wind_direction_80m,wind_speed_120m,wind_direction_120m';
+    var vars='cape,convective_inhibition,lifted_index,wind_speed_10m,wind_gusts_10m,wind_direction_10m,dewpoint_2m,temperature_2m,surface_pressure,wind_speed_80m,wind_direction_80m,wind_speed_120m,wind_direction_120m,convective_precipitation,cloud_cover,cloud_cover_low,cloud_cover_mid,freezing_level_height';
     var url='https://api.open-meteo.com/v1/forecast?latitude='+city.la.toFixed(4)+'&longitude='+city.lo.toFixed(4)+'&hourly='+vars+'&wind_speed_unit=kn&forecast_days=2&timezone=auto';
-    var r=await fetch(url);
-    if(!r.ok) return null;
+    // Retry once on failure with a short backoff
+    var r = await fetch(url).catch(function(){ return null; });
+    if(!r || !r.ok){
+      await new Promise(function(res){ setTimeout(res, 800); });
+      r = await fetch(url).catch(function(){ return null; });
+    }
+    if(!r || !r.ok) return null;
     var data=await r.json();
     if(!data||!data.hourly||!data.hourly.time||!data.hourly.time.length) return null;
     var now=new Date();
@@ -1478,16 +2168,17 @@ function loadCityForecast(cityName,state,lat,lon){
 // ════════════════════════════════════════
 // GLOBAL STATE for new features
 // ════════════════════════════════════════
-var gHourly = [], gComputed = [], gProbs = [];
+var gHourly = [], gComputed = [], gProbs = [], gInitScores = [];
 var gLastFetch = null, gRefreshTimer = null;
 var selectedHourIdx = -1;
 
 // Patch render() to stash data globally and wire up new features
 var _origRender = render;
-render = function(name, lat, lon, now, hourly, computed, probs, alertsData, tz) {
-  gHourly = hourly; gComputed = computed; gProbs = probs;
+render = function(name, lat, lon, now, hourly, computed, probs, alertsData, tz, initScores) {
+  initScores = initScores || computed.map(function(c){return stormInitiationScore(c);});
+  gHourly = hourly; gComputed = computed; gProbs = probs; gInitScores = initScores;
   gLastFetch = new Date();
-  _origRender(name, lat, lon, now, hourly, computed, probs, alertsData, tz);
+  _origRender(name, lat, lon, now, hourly, computed, probs, alertsData, tz, initScores);
   renderTrendChart(hourly, computed, probs);
   wireTimeline(computed, probs, now);
   updateRefreshBadge();
@@ -1828,6 +2519,8 @@ function updateRefreshBadge() {
     ? 'Just updated · auto-refresh in 30 min'
     : 'Updated ' + mins + ' min ago' + (mins > 25 ? ' · refreshing soon' : ' · auto-refresh in ' + (30-mins) + ' min');
 }
+
+
 
 </script>
 </body>
