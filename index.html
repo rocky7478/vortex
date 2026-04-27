@@ -20,10 +20,10 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:17px;line-height:1.7;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(32,144,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(32,144,255,.03) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:0}
 body::after{content:'';position:fixed;top:-20%;right:-10%;width:60vw;height:60vw;background:radial-gradient(ellipse,rgba(255,59,32,.05) 0%,transparent 65%);pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top,0px)) 28px calc(80px + env(safe-area-inset-bottom,0px))}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:calc(32px + env(safe-area-inset-top,0px)) 36px calc(100px + env(safe-area-inset-bottom,0px))}
 header{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;margin-bottom:28px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:12px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-logo{width:44px;height:44px;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -32,13 +32,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .brand-logo::after{content:'';position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red)}
 .brand-name{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:5px;color:var(--white);line-height:1}
 .brand-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
-.hdr-right{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);text-align:right;line-height:2;letter-spacing:1px}
+.hdr-right{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);text-align:right;line-height:2;letter-spacing:1px}
 .live-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:4px;vertical-align:middle;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .search-section{margin-bottom:24px}
-.search-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block}
+.search-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:block}
 .search-wrap{position:relative}
-.search-input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-family:'IBM Plex Sans',sans-serif;font-size:20px;font-weight:300;padding:20px 60px 20px 20px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;border-radius:0}
+.search-input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-family:'IBM Plex Sans',sans-serif;font-size:22px;font-weight:300;padding:22px 68px 22px 22px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;border-radius:0}
 .search-input:focus{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
 .search-input::placeholder{color:var(--dim)}
 .search-btn{position:absolute;right:0;top:0;bottom:0;width:64px;background:var(--red);border:none;cursor:pointer;font-size:22px;transition:background .15s;display:flex;align-items:center;justify-content:center}
@@ -46,7 +46,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .search-btn:disabled{background:var(--muted);cursor:not-allowed}
 .ac-list{position:absolute;top:calc(100% + 1px);left:0;right:0;background:var(--bg2);border:1px solid var(--border);border-top:none;z-index:100;display:none;max-height:220px;overflow-y:auto}
 .ac-list.open{display:block}
-.ac-item{padding:13px 16px;cursor:pointer;font-size:14px;color:var(--body);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;transition:background .1s}
+.ac-item{padding:13px 16px;cursor:pointer;font-size:16px;color:var(--body);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;transition:background .1s}
 .ac-item:last-child{border-bottom:none}
 .ac-item:hover{background:var(--bg3);color:var(--white)}
 .ac-item .pin{color:var(--red);font-size:11px;flex-shrink:0}
@@ -59,7 +59,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .spinner .r3{inset:22px;border-bottom-color:var(--yellow);animation:spin .6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--white)}
-.loading-steps{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);line-height:2.2}
+.loading-steps{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);line-height:2.4}
 .ls{opacity:.3;transition:opacity .3s,color .3s}
 .ls.active{opacity:1;color:var(--teal)}
 .ls.active::before{content:'▶ '}
@@ -75,7 +75,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .alert-bar{display:none;background:rgba(255,192,32,.06);border:1px solid rgba(255,192,32,.3);padding:14px 20px;margin-bottom:20px;font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:var(--yellow);line-height:1.8}
 .alert-bar.on{display:block}
 .alert-bar.tornado{background:rgba(255,59,32,.1);border-color:rgba(255,59,32,.4);color:var(--red)}
-.prob-card{background:var(--bg2);border:1px solid var(--border);padding:22px;margin-bottom:18px;position:relative;overflow:hidden}
+.prob-card{background:var(--bg2);border:1px solid var(--border);padding:30px;margin-bottom:18px;position:relative;overflow:hidden}
 .prob-card::before{content:'';position:absolute;inset:0;opacity:.05;transition:background .5s;pointer-events:none}
 .prob-card.rk-none::before{background:var(--green)}
 .prob-card.rk-marg::before{background:var(--lime)}
@@ -84,47 +84,47 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .prob-card.rk-high::before{background:var(--red)}
 .prob-card.rk-extreme::before{background:#ff40ff}
 .prob-grid{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}
-.prob-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
+.prob-lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--muted);margin-bottom:6px;text-transform:uppercase}
 .prob-num{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:1;letter-spacing:-2px}
 .prob-pct{font-size:36px;opacity:.5}
 .prob-track{height:4px;background:var(--border);margin-top:8px;overflow:hidden}
 .prob-fill{height:100%;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
-.prob-risk{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;margin-top:8px}
+.prob-risk{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;margin-top:10px}
 .prob-headline{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:var(--white);line-height:1.2;margin-bottom:10px}
 .prob-summary{font-size:16px;font-weight:300;color:var(--body);line-height:1.7}
 .data-src{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
-.ds{font-family:'IBM Plex Mono',monospace;font-size:9px;border:1px solid var(--border);padding:3px 8px;color:var(--muted);letter-spacing:1px}
+.ds{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--border);padding:4px 10px;color:var(--muted);letter-spacing:1px}
 .ds.live{border-color:var(--teal);color:var(--teal)}
-.sec{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;margin-top:4px;display:flex;align-items:center;gap:10px}
+.sec{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;margin-top:6px;display:flex;align-items:center;gap:10px}
 .sec::after{content:'';flex:1;height:1px;background:var(--border)}
 .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:20px}
 .ts{background:var(--bg2);border:1px solid var(--border);padding:10px 6px;text-align:center;position:relative;transition:border-color .2s,transform .15s}
 .ts:hover{transform:translateY(-2px)}
 .ts.peak{border-color:var(--orange)}
 .ts.warn{border-color:rgba(255,192,32,.5)}
-.ts-hr{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:6px;letter-spacing:.5px}
+.ts-hr{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);margin-bottom:7px;letter-spacing:.5px}
 .ts-prob{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;letter-spacing:1px}
 .ts-pct{font-size:11px;opacity:.5}
 .ts-bar{height:3px;background:var(--border);margin-top:6px;overflow:hidden}
 .ts-fill{height:100%;transition:width .8s ease-out}
-.ts-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:5px;text-transform:uppercase;letter-spacing:.5px}
+.ts-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
 .ts-dot{position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%}
 .idx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:20px}
-.idx{background:var(--bg2);border:1px solid var(--border);padding:14px 12px}
+.idx{background:var(--bg2);border:1px solid var(--border);padding:18px 16px}
 .idx-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px}
-.idx-abbr{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.idx-abbr{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
 .idx-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:1px}
 .idx-val{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;letter-spacing:1px}
 .idx-unit{font-size:12px;font-family:'IBM Plex Sans',sans-serif;font-weight:300;opacity:.5}
-.idx-name{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.4}
+.idx-name{font-size:14px;color:var(--muted);margin-top:5px;line-height:1.5}
 .idx-bar{height:2px;background:var(--border);margin-top:8px;overflow:hidden}
 .idx-fill{height:100%;transition:width .9s ease-out}
-.idx-thresh{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);margin-top:5px}
+.idx-thresh{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);margin-top:6px}
 .windows{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:20px}
-.win{background:var(--bg2);border:1px solid var(--border);padding:14px}
-.win-time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:1px}
+.win{background:var(--bg2);border:1px solid var(--border);padding:20px}
+.win-time{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);margin-bottom:7px;letter-spacing:1px}
 .win-risk{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;margin-bottom:6px}
-.win-desc{font-size:14px;color:var(--body);font-weight:300;line-height:1.6}
+.win-desc{font-size:15px;color:var(--body);font-weight:300;line-height:1.65}
 .data-table{background:var(--bg2);border:1px solid var(--border);margin-bottom:20px;overflow:hidden}
 .dt-row{display:grid;grid-template-columns:110px 1fr 80px;border-bottom:1px solid var(--border);align-items:center}
 .dt-row:last-child{border-bottom:none}
@@ -133,10 +133,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .dt-bar-track{height:5px;background:var(--border);overflow:hidden}
 .dt-bar-fill{height:100%;transition:width 1s ease-out}
 .dt-val{font-family:'IBM Plex Mono',monospace;font-size:14px;text-align:right;padding:12px 16px;font-weight:500}
-.fcst-card{background:var(--bg2);border:1px solid var(--border);padding:18px;margin-bottom:20px}
+.fcst-card{background:var(--bg2);border:1px solid var(--border);padding:24px;margin-bottom:20px}
 .fcst-text{font-size:16px;font-weight:300;line-height:1.85;color:var(--body)}
 .fcst-text strong{color:var(--white);font-weight:500}
-.disc{border-top:1px solid var(--border);padding-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);line-height:2}
+.disc{border-top:1px solid var(--border);padding-top:18px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--dim);line-height:2}
 .c-none{color:var(--green)}.c-marg{color:var(--lime)}.c-slight{color:var(--yellow)}
 .c-mod{color:var(--orange)}.c-high{color:var(--red)}.c-extreme{color:#ff40ff}.c-muted{color:var(--muted)}
 .b-none{background:var(--green)}.b-marg{background:var(--lime)}.b-slight{background:var(--yellow)}
@@ -146,9 +146,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   .idx-grid{grid-template-columns:repeat(2,1fr)}
   .windows{grid-template-columns:1fr}
   .prob-grid{grid-template-columns:1fr}
-  .prob-num{font-size:80px}
-  .brand-name{font-size:36px}
-  .wrap{padding:20px 16px 80px}
+  .prob-num{font-size:88px}
+  .brand-name{font-size:40px}
+  .wrap{padding:24px 18px 80px}
 }
 
 /* ── HOTSPOT BUTTON ── */
@@ -163,25 +163,25 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .hs-scanning-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--white);margin-bottom:8px}
 .hs-prog-wrap{height:4px;background:var(--border);margin:12px 0;overflow:hidden}
 .hs-prog-bar{height:100%;background:var(--red);width:0;transition:width .4s ease-out}
-.hs-prog-text{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
+.hs-prog-text{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
 .hs-map-wrap{background:var(--bg2);border:1px solid var(--border);padding:14px;margin-bottom:10px;position:relative}
 .hs-map-title{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .us-map-svg{width:100%;height:auto;display:block}
 .map-dot{cursor:pointer}
 .map-dot:hover{filter:drop-shadow(0 0 5px currentColor)}
-.map-tooltip{position:absolute;background:var(--bg3);border:1px solid var(--border);padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;pointer-events:none;z-index:10;white-space:nowrap;display:none;line-height:1.7}
+.map-tooltip{position:absolute;background:var(--bg3);border:1px solid var(--border);padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;pointer-events:none;z-index:10;white-space:nowrap;display:none;line-height:1.7}
 .hs-list{display:grid;gap:6px;margin-bottom:10px}
 .hs-row{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);padding:11px 14px;cursor:pointer;transition:border-color .15s}
 .hs-row:hover{border-color:var(--red)}
 .hs-rank{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--dim)}
 .hs-city-wrap{}
 .hs-city{font-size:16px;color:var(--white);font-weight:400;line-height:1.3}
-.hs-state{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:1px}
+.hs-state{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);margin-top:3px;letter-spacing:1px}
 .hs-prob-wrap{text-align:right}
 .hs-prob{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1}
 .hs-prob sup{font-size:12px;opacity:.55}
 .hs-stp{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:2px}
-.hs-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted)}
+.hs-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
 .hs-ld{display:flex;align-items:center;gap:5px}
 .hs-ldot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
@@ -212,12 +212,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .drawer-close:hover{border-color:var(--red);color:var(--red)}
 .drawer-body{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
 .drawer-cell{background:var(--bg2);padding:12px 10px}
-.dc-label{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
-.dc-val{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;letter-spacing:.5px}
-.dc-unit{font-size:11px;opacity:.45;font-family:'IBM Plex Sans',sans-serif;font-weight:300}
-.dc-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-top:3px}
+.dc-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.dc-val{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;letter-spacing:.5px}
+.dc-unit{font-size:13px;opacity:.45;font-family:'IBM Plex Sans',sans-serif;font-weight:300}
+.dc-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);margin-top:4px}
 .drawer-hodo{grid-column:span 2;padding:12px}
-.hodo-title{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.hodo-title{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
 .hodo-svg{display:block;width:100%;max-width:200px}
 @media(max-width:600px){
   .drawer-body{grid-template-columns:repeat(2,1fr)}
@@ -261,27 +261,27 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .refresh-dot.refreshing{animation:blink .5s infinite}
 
 /* ── STORM INITIATION GAUGE ── */
-.init-card{background:var(--bg2);border:1px solid var(--border);padding:20px;margin-bottom:20px}
+.init-card{background:var(--bg2);border:1px solid var(--border);padding:26px;margin-bottom:24px}
 .init-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap}
 .init-score-wrap{flex-shrink:0;text-align:center}
 .init-score-num{font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;letter-spacing:-1px}
 .init-score-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px}
 .init-verdict{flex:1}
 .init-verdict-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);line-height:1.2;margin-bottom:6px}
-.init-verdict-body{font-size:13px;font-weight:300;color:var(--body);line-height:1.65}
+.init-verdict-body{font-size:15px;font-weight:300;color:var(--body);line-height:1.7}
 .init-gauge-track{height:8px;background:var(--border);margin:14px 0 6px;overflow:hidden;position:relative}
 .init-gauge-fill{height:100%;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1);position:relative}
-.init-gauge-fill::after{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:rgba(255,255,255,.4)}
-.init-scale{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-bottom:14px}
+.init-gauge-fill::after{content:'absolute';right:0;top:0;bottom:0;width:3px;background:rgba(255,255,255,.4)}
+.init-scale{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);margin-bottom:14px}
 .init-factors{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .init-factor{background:var(--bg3);border:1px solid var(--border);padding:10px 8px;text-align:center}
 .init-factor-icon{font-size:16px;margin-bottom:4px}
 .init-factor-label{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
 .init-factor-val{font-family:'Bebas Neue',sans-serif;font-size:18px;line-height:1}
-.init-factor-sub{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);margin-top:2px}
+.init-factor-sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);margin-top:3px}
 .init-hourly{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:12px}
 .init-hr{background:var(--bg3);border:1px solid var(--border);padding:6px 4px;text-align:center}
-.init-hr-time{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);margin-bottom:3px}
+.init-hr-time{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:4px}
 .init-hr-score{font-family:'Bebas Neue',sans-serif;font-size:18px;line-height:1}
 .init-hr-bar{height:2px;background:var(--border);margin-top:4px;overflow:hidden}
 .init-hr-fill{height:100%;transition:width .6s ease-out}
@@ -303,7 +303,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .tab-pane.active{display:block}
 
 /* ── LEARN TAB ── */
-.learn-intro{font-size:17px;color:var(--body);line-height:1.8;margin-bottom:32px;
+.learn-intro{font-size:18px;color:var(--body);line-height:1.85;margin-bottom:32px;
   padding:20px 24px;background:var(--bg2);border:1px solid var(--border)}
 .learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
 .learn-card{background:var(--bg2);border:1px solid var(--border);padding:24px;cursor:pointer;
@@ -313,20 +313,20 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .lc-icon{font-size:32px;margin-bottom:12px}
 .lc-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--white);margin-bottom:4px}
 .lc-subtitle{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:12px}
-.lc-plain{font-size:15px;color:var(--body);line-height:1.75}
+.lc-plain{font-size:16px;color:var(--body);line-height:1.8}
 .lc-detail{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
 .lc-detail.on{display:block}
 .lc-detail-row{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);align-items:start}
 .lc-detail-row:last-child{border-bottom:none}
 .lc-val-label{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px}
-.lc-val-desc{font-size:13px;color:var(--body);line-height:1.6}
+.lc-val-desc{font-size:15px;color:var(--body);line-height:1.65}
 .learn-risk-section{margin-bottom:32px}
 .risk-scale{display:grid;gap:10px}
 .risk-row{display:grid;grid-template-columns:140px 60px 1fr;gap:16px;align-items:center;
   background:var(--bg2);border:1px solid var(--border);padding:16px 20px}
 .risk-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px}
 .risk-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted)}
-.risk-explain{font-size:14px;color:var(--body);line-height:1.6}
+.risk-explain{font-size:15px;color:var(--body);line-height:1.65}
 .learn-faq{margin-bottom:32px}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-q{padding:18px 0;cursor:pointer;font-size:16px;color:var(--white);display:flex;
@@ -334,7 +334,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .faq-q:hover{color:var(--teal)}
 .faq-arrow{font-size:12px;color:var(--muted);transition:transform .2s;flex-shrink:0}
 .faq-item.open .faq-arrow{transform:rotate(180deg)}
-.faq-a{display:none;padding-bottom:18px;font-size:15px;color:var(--body);line-height:1.8}
+.faq-a{display:none;padding-bottom:18px;font-size:16px;color:var(--body);line-height:1.85}
 .faq-item.open .faq-a{display:block}
 @media(max-width:700px){
   .learn-grid{grid-template-columns:1fr}
@@ -345,34 +345,41 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 }
 
 /* ── RADAR TAB ── */
+.radar-sliders{background:var(--bg2);border:1px solid var(--border);border-top:none;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.radar-slider-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.slider-label{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);min-width:180px}
+.slider-input{flex:1;min-width:120px;accent-color:var(--red);cursor:pointer}
+.slider-val{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--body);min-width:36px;text-align:right}
+@media(max-width:700px){
+    .slider-label{min-width:120px}
+}
+/* ── RADAR TAB (base) ── */
 #radarContainer{width:100%}
 .radar-header{display:flex;align-items:center;justify-content:space-between;
   margin-bottom:16px;flex-wrap:wrap;gap:12px}
 .radar-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--white)}
-.radar-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);line-height:1.8}
-.radar-controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.radar-meta{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);line-height:1.8}
+.radar-controls{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .radar-btn{background:var(--bg2);border:1px solid var(--border);color:var(--body);
-  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;
-  padding:8px 16px;cursor:pointer;transition:border-color .15s,color .15s;text-transform:uppercase}
-.radar-btn:hover{border-color:var(--teal);color:var(--teal)}
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;padding:11px 20px;cursor:pointer;
+  transition:border-color .2s,color .2s}
+.radar-btn:hover{border-color:var(--teal);color:var(--white)}
 .radar-btn.active{border-color:var(--red);color:var(--red)}
-#radarMap{width:100%;height:560px;background:var(--bg2);border:1px solid var(--border)}
-.radar-legend{display:flex;gap:0;margin-top:10px;height:14px;overflow:hidden;border:1px solid var(--border)}
-.radar-legend-bar{flex:1;height:14px}
-.radar-legend-labels{display:flex;justify-content:space-between;
-  font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:4px;padding:0 2px}
-.radar-timestamp{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
-  margin-top:8px;text-align:right}
-.radar-layer-info{background:var(--bg2);border:1px solid var(--border);padding:14px 18px;
-  margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.rli-item{text-align:center}
-.rli-label{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.rli-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white)}
-@media(max-width:700px){
-  #radarMap{height:400px}
-  .radar-layer-info{grid-template-columns:1fr 1fr}
+#radarMap{width:100%;height:640px;background:var(--bg2);border:1px solid var(--border)}
+
+.radar-site-tooltip{
+  background:var(--bg3)!important;
+  border:1px solid var(--border)!important;
+  color:var(--text)!important;
+  font-family:'IBM Plex Mono',monospace!important;
+  font-size:12px!important;
+  line-height:1.7!important;
+  padding:8px 12px!important;
+  box-shadow:none!important;
+  border-radius:0!important;
 }
+.radar-site-tooltip::before{ display:none!important; }
 </style>
 </head>
 <body>
@@ -420,9 +427,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   </div>
 </div>
 
-</div><!-- /tab-forecast -->
-
-<div class="tab-pane" id="tab-hotspots">
+</div><div class="tab-pane" id="tab-hotspots">
 <button class="hotspot-btn" id="hotspotBtn" onclick="toggleHotspots()">
   <span>🌪</span>
   <span>US Tornado Hotspots — Scan 150 cities now</span>
@@ -436,9 +441,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   </div>
   <div id="hsResultsEl"></div>
 </div>
-</div><!-- /tab-hotspots -->
-
-<div class="tab-pane" id="tab-learn"></div>
+</div><div class="tab-pane" id="tab-learn"></div>
 
 <div class="tab-pane" id="tab-radar"><div id="radarContainer"></div></div>
 
@@ -654,7 +657,7 @@ function runForecast(){
       'cape','convective_inhibition','lifted_index',
       'wind_speed_10m','wind_gusts_10m','wind_direction_10m',
       'temperature_2m','dewpoint_2m','relative_humidity_2m',
-      'precipitation_probability','surface_pressure',
+      'precipitation_probability','precipitation','surface_pressure',
       'wind_speed_80m','wind_direction_80m',
       'wind_speed_120m','wind_direction_120m'
     ].join(',');
@@ -677,8 +680,12 @@ function runForecast(){
       computedGlobal=computed;
 
       setStep(5);
-      var probs=computed.map(function(c){return tornadoProb(c);});
       var initScores=computed.map(function(c){return stormInitiationScore(c);});
+      var probs=computed.map(function(c, i){
+        var rawProb = tornadoProb(c);
+        var factor = initiationFactor(initScores[i]);
+        return Math.min(20, Math.max(0, Math.round((rawProb * factor) * 10) / 10));
+      });
 
       setStep(6);
       return new Promise(function(resolve){
@@ -783,6 +790,8 @@ function computeIndices(h){
     srh01:srh01,stp:stp,scp:scp,ehi:ehi,mlcape:mlcape,
     ws10:ws10,ws80:ws80,wd10:wd10,wd80:wd80,wd120:wd120,
     precip:h.precipitation_probability||0,
+    convPrecip:h.convective_precipitation||0,
+    totalPrecip:h.precipitation||0,
     gusts:h.wind_gusts_10m||0
   };
 }
@@ -843,31 +852,44 @@ function tornadoProb(c){
 
 // ── Storm Initiation Score (0-100) ──
 function stormInitiationScore(c){
+  // 1. Hard thermodynamic limits: No fuel = no storms
+  if (c.cape < 100) return 0;
+  
   var score = 0;
-  if(c.convPrecip > 5)        score += 40;
-  else if(c.convPrecip > 1)   score += 28;
-  else if(c.convPrecip > 0.1) score += 15;
-  else if(c.convPrecip > 0)   score += 6;
-  if(c.precip >= 80)      score += 25;
-  else if(c.precip >= 60) score += 18;
-  else if(c.precip >= 40) score += 12;
-  else if(c.precip >= 20) score += 5;
-  if(c.cin < 10)       score += 20;
-  else if(c.cin < 25)  score += 14;
-  else if(c.cin < 50)  score += 8;
-  else if(c.cin < 100) score += 2;
-  if(c.cin > 200)      score = Math.round(score * 0.2);
-  else if(c.cin > 150) score = Math.round(score * 0.45);
-  if(c.li < -6)      score += 10;
-  else if(c.li < -3) score += 6;
-  else if(c.li < 0)  score += 3;
-  else if(c.li > 4)  score = Math.round(score * 0.5);
-  if(c.cloudMid > 50 && c.cloudLow > 30) score += 5;
-  else if(c.cloudMid > 70 && c.cloudLow < 20) score -= 5;
-  if(c.cape < 100)      return 0;
-  if(c.cape < 300)      score = Math.round(score * 0.4);
-  else if(c.cape < 600) score = Math.round(score * 0.7);
-  return Math.min(100, Math.max(0, score));
+
+  // 2. Thermodynamic Priming (0 - 60 points)
+  // How explosive is the atmosphere, and is the "lid" (CIN) breakable?
+  var capeScore = Math.min(30, (c.cape / 3000) * 30); // Max 30 pts at 3000 CAPE
+  
+  var cinScore = 0;
+  if (c.cin < 15) cinScore = 30;      // Cap is gone, free convection likely
+  else if (c.cin < 50) cinScore = 20; // Weak cap, easily broken by a front
+  else if (c.cin < 100) cinScore = 5; // Moderate cap, needs strong forcing
+  else cinScore = -20;                // Strong cap, actively suppresses storms
+
+  score += (capeScore + cinScore);
+
+  // 3. Forcing / Trigger (0 - 40 points)
+  // Are models actually printing water falling in this highly unstable air?
+  if (c.totalPrecip > 2.0) score += 40;      // Heavy rain in unstable air = Thunderstorm
+  else if (c.totalPrecip > 0.5) score += 30; // Moderate rain = Likely Thunderstorm
+  else if (c.totalPrecip > 0.1) score += 15; // Light precip = Could be elevated storms
+  else {
+    // No precip explicitly forecast by the model for this exact point.
+    // BUT, if we have huge CAPE and zero CIN, we MUST respect the threat 
+    // because dryline storms could fire miles away and move in.
+    if (c.cin < 25 && c.cape > 1500) score += 20; 
+  }
+
+  // 4. Probability Modifier (Slight bump/penalty based on confidence)
+  if (c.precip > 60) score += 10;
+  else if (c.precip < 20) score -= 10;
+
+  // 5. Final Cap Sanity Check
+  if (c.cin > 200) score *= 0.1; // "Loaded gun" setup, but the cap holds strong
+  else if (c.cin > 125) score *= 0.4; // Tough cap to break
+
+  return Math.min(100, Math.max(0, Math.round(score)));
 }
 
 // ── Initiation factor: score → probability multiplier ──
@@ -1229,20 +1251,19 @@ function renderInitiationGauge(computed, initScores, probs){
 
   // Build factor tiles for peak hour
   var factors = [
-    {icon:'🌧', label:'Conv. Precip', val: peakC.convPrecip > 0 ? peakC.convPrecip.toFixed(1)+' mm' : 'None',
-     sub: peakC.convPrecip > 1 ? 'Storms firing ✓' : peakC.convPrecip > 0 ? 'Marginal' : 'No convection',
-     col: peakC.convPrecip > 1 ? 'var(--red)' : peakC.convPrecip > 0 ? 'var(--yellow)' : 'var(--muted)'},
+    {icon:'🌧', label:'Total Precip', val: peakC.totalPrecip > 0 ? peakC.totalPrecip.toFixed(1)+' mm' : 'None',
+     sub: peakC.totalPrecip > 2 ? 'Heavy forcing ✓' : peakC.totalPrecip > 0 ? 'Light forcing' : 'No explicit rain',
+     col: peakC.totalPrecip > 2 ? 'var(--red)' : peakC.totalPrecip > 0 ? 'var(--orange)' : 'var(--muted)'},
     {icon:'🎯', label:'Precip Prob',  val: peakC.precip+'%',
      sub: peakC.precip >= 60 ? 'High confidence' : peakC.precip >= 30 ? 'Moderate' : 'Low confidence',
      col: peakC.precip >= 60 ? 'var(--orange)' : peakC.precip >= 30 ? 'var(--yellow)' : 'var(--muted)'},
     {icon:'🔒', label:'CIN Cap',      val: Math.round(peakC.cin)+' J/kg',
-     sub: peakC.cin < 25 ? 'Weak cap ✓' : peakC.cin < 75 ? 'Moderate cap' : peakC.cin < 150 ? 'Strong cap' : 'Extreme — storms suppressed',
+     sub: peakC.cin < 25 ? 'Weak cap ✓' : peakC.cin < 75 ? 'Moderate cap' : peakC.cin < 150 ? 'Strong cap' : 'Extreme cap',
      col: peakC.cin < 25 ? 'var(--green)' : peakC.cin < 75 ? 'var(--lime)' : peakC.cin < 150 ? 'var(--yellow)' : 'var(--muted)'},
-    {icon:'📐', label:'Lifted Index', val: peakC.li.toFixed(1),
-     sub: peakC.li < -4 ? 'Very unstable ✓' : peakC.li < 0 ? 'Unstable' : peakC.li < 3 ? 'Stable' : 'Very stable',
-     col: peakC.li < -4 ? 'var(--red)' : peakC.li < 0 ? 'var(--yellow)' : 'var(--muted)'},
+    {icon:'⚡', label:'Instability', val: Math.round(peakC.cape)+' J/kg',
+     sub: peakC.cape > 2000 ? 'Explosive fuel ✓' : peakC.cape > 1000 ? 'Strong fuel' : peakC.cape > 250 ? 'Marginal' : 'Stable',
+     col: peakC.cape > 2000 ? 'var(--red)' : peakC.cape > 1000 ? 'var(--orange)' : peakC.cape > 250 ? 'var(--yellow)' : 'var(--muted)'},
   ];
-
   var facHTML = factors.map(function(f){
     return '<div class="init-factor">'
       +'<div class="init-factor-icon">'+f.icon+'</div>'
@@ -1487,223 +1508,276 @@ function toggleFaq(idx){
 
 
 // ════════════════════════════════════════
-// LIVE RADAR TAB
-// Uses RainViewer API (free, no key) + Leaflet.js
+// LIVE RADAR TAB (Iowa State Mesonet Composite with Loop)
 // ════════════════════════════════════════
-var radarInitialized = false;
-var radarMap = null;
-var radarLayer = null;
-var radarFrames = [];
-var radarFrameIdx = 0;
-var radarPlaying = false;
-var radarPlayTimer = null;
-var radarApiData = null;
-var currentRadarType = 'radar'; // 'radar' or 'satellite'
+var radarInitialized  = false;
+var radarMap          = null;
+var hotspotLayerGroup = null;
+var hotspotOnRadar    = false;
 
-// Hook into switchTab to init radar when tab opens
+var iemFrames = [];
+var loopIndex = 0;
+var loopTimer = null;
+var isPlaying = true;
+var currentOpacity = 0.8;
+
+// IEM rolling 50-minute cache intervals
+var iemOffsets = [
+  { id: 'nexrad-n0q-900913-m50m', label: '-50 min' },
+  { id: 'nexrad-n0q-900913-m45m', label: '-45 min' },
+  { id: 'nexrad-n0q-900913-m40m', label: '-40 min' },
+  { id: 'nexrad-n0q-900913-m35m', label: '-35 min' },
+  { id: 'nexrad-n0q-900913-m30m', label: '-30 min' },
+  { id: 'nexrad-n0q-900913-m25m', label: '-25 min' },
+  { id: 'nexrad-n0q-900913-m20m', label: '-20 min' },
+  { id: 'nexrad-n0q-900913-m15m', label: '-15 min' },
+  { id: 'nexrad-n0q-900913-m10m', label: '-10 min' },
+  { id: 'nexrad-n0q-900913-m05m', label: '-5 min' },
+  { id: 'nexrad-n0q-900913',      label: 'Live' }
+];
+
+
+// Hook into tab switching
 var _origSwitchTab = switchTab;
 switchTab = function(name, btn) {
   _origSwitchTab(name, btn);
-  if (name === 'radar') {
-    initRadar();
-    // Leaflet needs the container to be visible before it can calculate size
-    setTimeout(function() {
-      if (radarMap) radarMap.invalidateSize();
-    }, 50);
-  }
+  if(name === 'radar') setTimeout(initRadar, 80);
 };
 
 function initRadar() {
-  if (radarInitialized) return;
+  if(radarInitialized) return;
   radarInitialized = true;
-
   var container = document.getElementById('radarContainer');
-  if (!container) return;
+  if(!container) return;
 
   container.innerHTML =
     '<div class="radar-header">' +
       '<div>' +
         '<div class="radar-title">Live Radar</div>' +
-        '<div class="radar-meta">NEXRAD composite · RainViewer · Updates every 10 min</div>' +
+        '<div class="radar-meta" id="radarSiteName">High-Res National Loop · Iowa State Mesonet</div>' +
       '</div>' +
-      '<div class="radar-meta" id="radarTimestamp">Loading...</div>' +
+      '<div class="radar-meta" id="radarTimestamp" style="color:var(--teal)">Loading loop...</div>' +
     '</div>' +
     '<div class="radar-controls">' +
-      '<button class="radar-btn active" id="rbRadar" onclick="setRadarType(\'radar\')">🌧 Precipitation</button>' +
-      '<button class="radar-btn" id="rbSat" onclick="setRadarType(\'satellite\')">🛰 Satellite</button>' +
-      '<button class="radar-btn" id="rbPlay" onclick="toggleRadarPlay()">▶ Animate</button>' +
-      '<button class="radar-btn" onclick="stepRadar(-1)">◀ Prev</button>' +
-      '<button class="radar-btn" onclick="stepRadar(1)">Next ▶</button>' +
+      '<button class="radar-btn active" id="rb-play" onclick="togglePlay()">Pause Loop</button>' +
+      '<button class="radar-btn" id="rb-hotspots" onclick="toggleHotspotOverlay(this)">Hotspots</button>' +
+      '<button class="radar-btn" onclick="fetchIEMLoop()">Refresh</button>' +
     '</div>' +
-    '<div id="radarMap"></div>' +
-    '<div class="radar-legend">' +
-      ['#00d8ff','#00a0ff','#0060d0','#00c000','#00e000','#80ff00',
-       '#ffff00','#e0c000','#ff8000','#ff4000','#c00000','#800080']
-      .map(function(c){ return '<div class="radar-legend-bar" style="background:'+c+'"></div>'; }).join('') +
+    '<div class="radar-sliders">' +
+      '<div class="radar-slider-row">' +
+        '<span class="slider-label">Radar opacity</span>' +
+        '<input type="range" min="0" max="100" value="80" class="slider-input" id="reflOpacity" oninput="setRadarOpacity(this.value)">' +
+        '<span class="slider-val" id="reflOpacityVal">80%</span>' +
+      '</div>' +
     '</div>' +
-    '<div class="radar-legend-labels">' +
-      '<span>Light</span><span>Moderate</span><span>Heavy</span><span>Extreme</span>' +
+    '<div id="velNote" style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;min-height:20px;padding:6px 0;color:var(--muted)">' +
+      'Unrestricted high-resolution national composite with a rolling 50-minute loop.' +
     '</div>' +
-    '<div class="radar-timestamp" id="radarFrameTime">—</div>' +
-    '<div class="radar-layer-info">' +
-      '<div class="rli-item"><div class="rli-label">Data Source</div><div class="rli-val" style="font-size:16px">RainViewer</div></div>' +
-      '<div class="rli-item"><div class="rli-label">Coverage</div><div class="rli-val" style="font-size:16px">Global</div></div>' +
-      '<div class="rli-item"><div class="rli-label">Resolution</div><div class="rli-val" style="font-size:16px">512px</div></div>' +
-    '</div>';
+    '<div id="radarMap" style="width:100%;height:640px;background:#0b0d13;border:1px solid #1f2638;margin-top:12px;"></div>';
 
-  // Load Leaflet then initialize map
-  loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js', function() {
-    loadLeafletCSS(function() {
-      buildRadarMap();
-    });
-  });
-}
-
-function loadLeafletCSS(cb) {
-  if (document.querySelector('link[href*="leaflet"]')) { cb(); return; }
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
-  link.onload = cb;
-  document.head.appendChild(link);
+  // Load Leaflet
+  if(!document.querySelector('link[href*="leaflet"]')) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+    document.head.appendChild(link);
+  }
+  if(typeof L !== 'undefined') {
+    buildRadarMap();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    s.onload = buildRadarMap;
+    s.onerror = showRadarFallback;
+    document.head.appendChild(s);
+  }
 }
 
 function buildRadarMap() {
-  if (typeof L === 'undefined') {
-    document.getElementById('radarMap').innerHTML =
-      '<div style="padding:40px;text-align:center;color:var(--muted);font-family:monospace">Could not load map library. Check your connection.</div>';
-    return;
-  }
+  var el = document.getElementById('radarMap');
+  if(!el || !el.offsetWidth) { setTimeout(buildRadarMap, 100); return; }
+  try {
+    var center = (selLat && selLon) ? [selLat, selLon] : [38.5, -96];
+    var zoom   = (selLat && selLon) ? 7 : 4;
 
-  // Center on continental US
-  // Wait for the container to be fully visible and sized before init
-  var mapEl = document.getElementById('radarMap');
-  if (!mapEl) return;
+    radarMap = L.map('radarMap', { center:center, zoom:zoom, zoomSnap:0.5, minZoom:3, maxZoom:12 });
 
-  radarMap = L.map('radarMap', {
-    zoomControl: true,
-    attributionControl: true,
-    minZoom: 2,
-    maxZoom: 10
-  }).setView([38.5, -96], 4);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution:'&copy; OpenStreetMap &copy; CARTO', subdomains:'abcd', minZoom:3, maxZoom:12
+    }).addTo(radarMap);
 
-  // Force Leaflet to recalculate size after paint
-  setTimeout(function() { radarMap.invalidateSize(); }, 100);
-
-  // Dark base map tiles
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap © CARTO',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(radarMap);
-
-  // If user already ran a forecast, center on that location
-  if (selLat && selLon) {
-    radarMap.setView([selLat, selLon], 7);
-    L.circleMarker([selLat, selLon], {
-      radius: 8, color: '#ff3b20', fillColor: '#ff3b20',
-      fillOpacity: 0.8, weight: 2
-    }).addTo(radarMap).bindPopup(selName || 'Your location');
-  }
-
-  // Fetch RainViewer frames
-  fetchRadarFrames();
-}
-
-function fetchRadarFrames() {
-  fetch('https://api.rainviewer.com/public/weather-maps.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      radarApiData = data;
-      applyRadarType(currentRadarType);
-      document.getElementById('radarTimestamp').textContent =
-        'Updated: ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-    })
-    .catch(function(e) {
-      console.warn('RainViewer fetch failed:', e);
-      document.getElementById('radarTimestamp').textContent = 'Radar data unavailable — check connection';
-    });
-}
-
-function applyRadarType(type) {
-  if (!radarApiData || !radarMap) return;
-
-  // Remove existing layer
-  if (radarLayer) { radarMap.removeLayer(radarLayer); radarLayer = null; }
-
-  if (type === 'radar') {
-    var frames = (radarApiData.radar && radarApiData.radar.past) || [];
-    if (radarApiData.radar && radarApiData.radar.nowcast) {
-      frames = frames.concat(radarApiData.radar.nowcast);
+    // Forecast location marker
+    if(selLat && selLon) {
+      L.circleMarker([selLat, selLon], {
+        radius:8, color:'#ff3b20', fillColor:'#ff3b20', fillOpacity:0.9, weight:2
+      }).addTo(radarMap).bindPopup('<strong>'+(selName||'Your location')+'</strong>');
     }
-    radarFrames = frames;
-  } else {
-    radarFrames = (radarApiData.satellite && radarApiData.satellite.infrared) || [];
-  }
 
-  if (!radarFrames.length) return;
+    hotspotLayerGroup = L.layerGroup();
+    radarMap.invalidateSize();
 
-  // Show most recent frame
-  radarFrameIdx = type === 'radar'
-    ? (radarApiData.radar && radarApiData.radar.past ? radarApiData.radar.past.length - 1 : radarFrames.length - 1)
-    : radarFrames.length - 1;
+    // Kick off IEM loop fetch
+    fetchIEMLoop();
 
-  showRadarFrame(radarFrameIdx);
+    // Auto update tiles every 5 minutes
+    setInterval(fetchIEMLoop, 5 * 60 * 1000);
+  } catch(e) { console.error('Radar build failed:', e); showRadarFallback(); }
 }
 
-function showRadarFrame(idx) {
-  if (!radarFrames.length || !radarMap) return;
-  idx = Math.max(0, Math.min(idx, radarFrames.length - 1));
-  radarFrameIdx = idx;
-  var frame = radarFrames[idx];
-  if (!frame) return;
-
-  if (radarLayer) { radarMap.removeLayer(radarLayer); radarLayer = null; }
-
-  var tileUrl = 'https://tilecache.rainviewer.com' + frame.path + '/512/{z}/{x}/{y}/2/1_1.png';
-  radarLayer = L.tileLayer(tileUrl, {
-    tileSize: 512, opacity: 0.75, zIndex: 10,
-    attribution: 'RainViewer'
+function makeLayer(product, opacity) {
+  var ts = Math.floor(Date.now() / 300000) * 300000;
+  var url = 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/' + product + '/{z}/{x}/{y}.png?_=' + ts;
+  return L.tileLayer(url, {
+    opacity:opacity, minZoom:3, maxZoom:12, zIndex:10,
+    tileSize: 256, zoomOffset: 0,
+    attribution:'<a href="https://mesonet.agron.iastate.edu" target="_blank">Iowa State Mesonet</a>'
   });
-  radarLayer.addTo(radarMap);
-
-  // Show timestamp
-  var d = new Date(frame.time * 1000);
-  var timeStr = d.toLocaleDateString([], {month:'short', day:'numeric'}) + ' ' +
-    d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-  var frameEl = document.getElementById('radarFrameTime');
-  if (frameEl) frameEl.textContent = timeStr + (idx === radarFrames.length - 1 ? ' (latest)' : '');
 }
 
-function setRadarType(type) {
-  currentRadarType = type;
-  document.getElementById('rbRadar').classList.toggle('active', type === 'radar');
-  document.getElementById('rbSat').classList.toggle('active', type === 'satellite');
-  if (radarPlaying) toggleRadarPlay();
-  applyRadarType(type);
-}
+function fetchIEMLoop() {
+  // Clean up old frames if any
+  iemFrames.forEach(function(f) { radarMap.removeLayer(f.layer); });
+  iemFrames = [];
 
-function stepRadar(dir) {
-  showRadarFrame(radarFrameIdx + dir);
-}
+  // Generate the layers for each time offset
+  iemOffsets.forEach(function(offset) {
+    var layer = makeLayer(offset.id, 0); // start invisible
+    layer.addTo(radarMap);
+    iemFrames.push({ label: offset.label, layer: layer });
+  });
 
-function toggleRadarPlay() {
-  radarPlaying = !radarPlaying;
-  var btn = document.getElementById('rbPlay');
-  if (!btn) return;
-  if (radarPlaying) {
-    btn.textContent = '⏸ Pause';
-    btn.classList.add('active');
-    radarPlayTimer = setInterval(function() {
-      var next = radarFrameIdx + 1;
-      if (next >= radarFrames.length) next = 0;
-      showRadarFrame(next);
-    }, 600);
+  // Start the loop
+  loopIndex = iemFrames.length - 1; // start at "Live"
+  if(isPlaying) {
+     clearTimeout(loopTimer);
+     playNextFrame();
   } else {
-    btn.textContent = '▶ Animate';
-    btn.classList.remove('active');
-    clearInterval(radarPlayTimer);
+     showFrame(loopIndex);
   }
+}
+
+function showFrame(idx) {
+  if(!iemFrames.length) return;
+  iemFrames.forEach(function(f, i) {
+    f.layer.setOpacity(i === idx ? currentOpacity : 0);
+  });
+  var tsEl = document.getElementById('radarTimestamp');
+  if(tsEl) {
+    tsEl.textContent = 'Loop: ' + iemFrames[idx].label;
+  }
+}
+
+function playNextFrame() {
+  if(!iemFrames.length) return;
+  loopIndex++;
+  var delay = 500; // standard frame delay (half second)
+  
+  if(loopIndex >= iemFrames.length) {
+    loopIndex = 0;
+    delay = 1000; // pause briefly before restarting loop
+  } else if (loopIndex === iemFrames.length - 1) {
+    delay = 2000; // pause longer on the most recent "Live" frame
+  }
+  
+  showFrame(loopIndex);
+  
+  if(isPlaying) {
+    clearTimeout(loopTimer);
+    loopTimer = setTimeout(playNextFrame, delay);
+  }
+}
+
+function togglePlay() {
+  isPlaying = !isPlaying;
+  var btn = document.getElementById('rb-play');
+  if(isPlaying) {
+    btn.textContent = 'Pause Loop';
+    btn.classList.add('active');
+    playNextFrame();
+  } else {
+    btn.textContent = 'Play Loop';
+    btn.classList.remove('active');
+    clearTimeout(loopTimer);
+  }
+}
+
+function setRadarOpacity(val) {
+  currentOpacity = +val / 100;
+  showFrame(loopIndex);
+  var el = document.getElementById('reflOpacityVal');
+  if(el) el.textContent = val + '%';
+}
+
+// ── Hotspot overlay on radar ──
+function toggleHotspotOverlay(btn) {
+  if(!radarMap) return;
+  hotspotOnRadar = !hotspotOnRadar;
+  btn.classList.toggle('active', hotspotOnRadar);
+
+  if(hotspotOnRadar) {
+    // Pull results from the hotspot scan if available
+    if(typeof hotspotResults !== 'undefined' && hotspotResults.length) {
+      buildHotspotOverlay(hotspotResults);
+      hotspotLayerGroup.addTo(radarMap);
+    } else {
+      // No scan done yet
+      hotspotOnRadar = false;
+      btn.classList.remove('active');
+      alert("Run the US Hotspots scan first to plot threat markers.");
+    }
+  } else {
+    if(radarMap.hasLayer(hotspotLayerGroup)) {
+      radarMap.removeLayer(hotspotLayerGroup);
+    }
+  }
+}
+
+function buildHotspotOverlay(results) {
+  hotspotLayerGroup.clearLayers();
+
+  results.forEach(function(r) {
+    if(!r.prob && !r.stp) return; // skip total zeros
+    var risk = riskLevel(r.prob);
+    var radius = r.prob >= 10 ? 10 : r.prob >= 5 ? 8 : r.prob > 0 ? 6 : 4;
+    var opacity = r.prob > 0 ? 0.85 : 0.25;
+
+    var marker = L.circleMarker([r.city.la, r.city.lo], {
+      radius: radius,
+      color: risk.color,
+      fillColor: risk.color,
+      fillOpacity: opacity,
+      weight: 1.5
+    });
+
+    marker.bindTooltip(
+      '<strong style="color:' + risk.color + '">' + r.city.n + ', ' + r.city.s + '</strong><br>' +
+      'Probability: ' + r.prob + '% (' + risk.level + ')<br>' +
+      'STP: ' + r.stp.toFixed(2) + ' · CAPE: ' + Math.round(r.cape).toLocaleString() + ' J/kg',
+      { direction:'top', className:'radar-site-tooltip' }
+    );
+
+    marker.on('click', function() {
+      // Load full forecast for this city
+      loadCityForecast(r.city.n, r.city.s, r.city.la, r.city.lo);
+    });
+
+    hotspotLayerGroup.addLayer(marker);
+  });
+}
+
+// Called when hotspot scan completes — auto-update radar overlay if active
+function onHotspotScanComplete(results) {
+  if(hotspotOnRadar && radarMap && hotspotLayerGroup) {
+    buildHotspotOverlay(results);
+    if(!radarMap.hasLayer(hotspotLayerGroup)) hotspotLayerGroup.addTo(radarMap);
+  }
+}
+
+function showRadarFallback() {
+  var el = document.getElementById('radarMap');
+  if(!el) return;
+  el.style.height = '600px';
+  el.innerHTML = '<iframe src="https://radar.weather.gov" style="width:100%;height:100%;border:none" title="NWS Radar"></iframe>';
 }
 
 // ════════════════════════════════════════════
@@ -1827,6 +1901,36 @@ async function scanHotspots(){
   var done=0;
   var results=[];
 
+  // Quick diagnostic: test a single city first to verify the API is reachable
+  progText.textContent='Testing API connection...';
+  var testResult = await fetchCityProb(CITIES[0]);
+  if(!testResult){
+    // Try one more time with a different city
+    await new Promise(function(res){ setTimeout(res, 1500); });
+    testResult = await fetchCityProb(CITIES[5]);
+  }
+  if(!testResult){
+    scanEl.style.display='none';
+    btn.disabled=false;
+    hotspotDone=false;
+    var errDiv=document.createElement('div');
+    errDiv.style.cssText='padding:24px;font-size:15px;color:var(--body);line-height:1.9';
+    errDiv.innerHTML='<strong style="color:var(--white)">Cannot reach Open-Meteo API.</strong><br><br>'
+      +'Check your internet connection. If you are online, Open-Meteo may be temporarily down.<br>'
+      +'<a href="https://api.open-meteo.com/v1/forecast?latitude=35&longitude=-97&hourly=cape&forecast_days=1&timezone=auto" '
+      +'target="_blank" style="color:var(--teal)">Click here to test the API directly</a> — if it returns JSON, try the scan again.<br><br>';
+    var retryBtn2=document.createElement('button');
+    retryBtn2.textContent='↺ Try Again';
+    retryBtn2.style.cssText='background:var(--red);border:none;color:white;padding:12px 24px;font-size:15px;cursor:pointer;font-family:inherit';
+    retryBtn2.onclick=function(){ hotspotDone=false; resultsEl.innerHTML=''; scanHotspots(); };
+    errDiv.appendChild(retryBtn2);
+    resultsEl.appendChild(errDiv);
+    return;
+  }
+  // Test passed — add first result and continue
+  results.push(testResult);
+  done=1;
+
   // Fetch in batches of 5 with a small delay between batches to avoid rate limiting
   var batchSize=5;
   for(var i=0;i<CITIES.length;i+=batchSize){
@@ -1843,17 +1947,21 @@ async function scanHotspots(){
     await new Promise(function(res){ setTimeout(res, 300); });
   }
 
-  // If nothing came back at all, show a simple retry message
+  // If nothing came back, show retry
   if(results.length===0){
     scanEl.style.display='none';
     btn.disabled=false;
-    resultsEl.innerHTML="<div style='padding:24px;font-size:15px;color:var(--body);line-height:1.8'>"
-      +"<strong style='color:var(--white)'>Could not load city data.</strong><br><br>"
-      +"This usually means the Open-Meteo API is temporarily unavailable or rate-limiting requests. "
-      +"Try again in a minute — the API is free and typically very reliable. "
-      +"If you're testing inside the Claude.ai preview, API calls are blocked by the sandbox; "
-      +"the scan works fully on your live site."
-      +"</div>";
+    hotspotDone=false;
+    var retryDiv=document.createElement('div');
+    retryDiv.style.cssText='padding:24px;font-size:16px;color:var(--body);line-height:1.9';
+    retryDiv.innerHTML='<strong style="color:var(--white)">No cities returned data.</strong><br><br>'
+      +'Open-Meteo may be temporarily rate-limiting. Wait 60 seconds and try again.<br><br>';
+    var retryBtn=document.createElement('button');
+    retryBtn.textContent='↺ Try Again';
+    retryBtn.style.cssText='background:var(--red);border:none;color:white;padding:12px 24px;font-size:15px;cursor:pointer;font-family:inherit';
+    retryBtn.onclick=function(){ hotspotDone=false; resultsEl.innerHTML=''; scanHotspots(); };
+    retryDiv.appendChild(retryBtn);
+    resultsEl.appendChild(retryDiv);
     return;
   }
 
@@ -1866,19 +1974,21 @@ async function scanHotspots(){
   btn.disabled=false;
 
   renderHotspots(results);
+  onHotspotScanComplete(results);
 }
 
 async function fetchCityProb(city){
   try {
-    var vars='cape,convective_inhibition,lifted_index,wind_speed_10m,wind_gusts_10m,wind_direction_10m,dewpoint_2m,temperature_2m,surface_pressure,wind_speed_80m,wind_direction_80m,wind_speed_120m,wind_direction_120m,convective_precipitation,cloud_cover,cloud_cover_low,cloud_cover_mid,freezing_level_height';
+    var vars='cape,convective_inhibition,lifted_index,wind_speed_10m,wind_gusts_10m,wind_direction_10m,dewpoint_2m,temperature_2m,precipitation_probability,precipitation,surface_pressure,wind_speed_80m,wind_direction_80m,wind_speed_120m,wind_direction_120m';
     var url='https://api.open-meteo.com/v1/forecast?latitude='+city.la.toFixed(4)+'&longitude='+city.lo.toFixed(4)+'&hourly='+vars+'&wind_speed_unit=kn&forecast_days=2&timezone=auto';
     // Retry once on failure with a short backoff
     var r = await fetch(url).catch(function(){ return null; });
     if(!r || !r.ok){
+      if(r) console.warn('fetchCityProb HTTP', r.status, r.statusText, city.n);
       await new Promise(function(res){ setTimeout(res, 800); });
-      r = await fetch(url).catch(function(){ return null; });
+      r = await fetch(url).catch(function(e){ console.warn('fetchCityProb retry failed', city.n, e.message); return null; });
     }
-    if(!r || !r.ok) return null;
+    if(!r || !r.ok){ console.warn('fetchCityProb gave up', city.n, r ? r.status : 'no response'); return null; }
     var data=await r.json();
     if(!data||!data.hourly||!data.hourly.time||!data.hourly.time.length) return null;
     var now=new Date();
@@ -1895,12 +2005,23 @@ async function fetchCityProb(city){
     if(!hourly.length) return null;
     // Use the base computeIndices (before wrapper) to avoid closure issues
     var computed=hourly.map(function(h){return baseComputeIndices(h);});
-    var probs=computed.map(function(c){return tornadoProb(c);});
+    var initScores=computed.map(function(c){return stormInitiationScore(c);});
+    var probs=computed.map(function(c, i){
+        var rawProb = tornadoProb(c);
+        var factor = initiationFactor(initScores[i]);
+        return Math.min(20, Math.max(0, Math.round((rawProb * factor) * 10) / 10));
+    });
     var peak=Math.max.apply(null,probs);
     var peakIdx=probs.indexOf(peak);
     var peakC=computed[peakIdx]||computed[0];
     return {city:city,prob:peak,stp:peakC.stp,scp:peakC.scp,cape:peakC.cape,shear06:peakC.shear06,srh01:peakC.srh01,lclHeight:peakC.lclHeight};
-  } catch(e){ console.warn('fetchCityProb failed',city.n,e); return null; }
+  } catch(e){
+    // Only log non-abort errors to avoid console spam
+    if(e && e.name !== 'AbortError'){
+      console.warn('fetchCityProb failed', city.n, e.message||e);
+    }
+    return null;
+  }
 }
 
 function renderHotspots(results){
