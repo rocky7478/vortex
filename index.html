@@ -366,7 +366,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
   transition:border-color .2s,color .2s}
 .radar-btn:hover{border-color:var(--teal);color:var(--white)}
 .radar-btn.active{border-color:var(--red);color:var(--red)}
-#radarMap{width:100%;height:640px;background:var(--bg2);border:1px solid var(--border)}
+#radarMap{width:100%;height:640px;background:var(--bg2);border:1px solid var(--border);margin-top:12px;}
 
 .radar-site-tooltip{
   background:var(--bg3)!important;
@@ -800,94 +800,53 @@ var baseComputeIndices = computeIndices;
 
 // ── Tornado probability ──
 function tornadoProb(c){
-  // Calibrated to SPC point probability climatology.
-  // Even violent tornado outbreaks rarely exceed 15% at a single point over 24hrs.
-  // STP is the primary driver; other indices adjust ±.
-  if(c.cape<100) return 0;
+  if(c.cape < 100) return 0;
+  var p = 0;
+  
+  if (c.stp >= 8)      p = 15 + (c.stp - 8) * 0.5;
+  else if (c.stp >= 4) p = 10 + (c.stp - 4) * 1.25;
+  else if (c.stp >= 2) p = 5 + (c.stp - 2) * 2.5;
+  else if (c.stp >= 1) p = 2 + (c.stp - 1) * 3.0;
+  else if (c.stp > 0)  p = c.stp * 2.0;
+  
+  var scpBase = 0;
+  if (c.scp >= 12)      scpBase = 8;
+  else if (c.scp >= 8)  scpBase = 5;
+  else if (c.scp >= 4)  scpBase = 2.5;
+  else if (c.scp >= 2)  scpBase = 1;
 
-  // Base probability from STP (SPC-calibrated point probabilities)
-  var p=0;
-  if     (c.stp>=8)   p=15;
-  else if(c.stp>=5)   p=10;
-  else if(c.stp>=3)   p=7;
-  else if(c.stp>=2)   p=5;
-  else if(c.stp>=1)   p=3;
-  else if(c.stp>=0.5) p=1.5;
-  else if(c.stp>=0.2) p=0.5;
+  p = Math.max(p, scpBase);
 
-  // Secondary: SCP can lift prob if STP is low but shear is strong
-  if(c.scp>=10) p=Math.max(p,8);
-  else if(c.scp>=6) p=Math.max(p,5);
-  else if(c.scp>=3) p=Math.max(p,2.5);
-
-  // EHI cross-check
-  if(c.ehi>=3)   p=Math.max(p,8);
-  else if(c.ehi>=2) p=Math.max(p,4);
-  else if(c.ehi>=1) p=Math.max(p,2);
-
-  // LCL modifier: low cloud bases strongly favor tornadoes
-  if(c.lclHeight<500 && p>0)       p*=1.25;
-  else if(c.lclHeight<800 && p>0)  p*=1.12;
-  else if(c.lclHeight>1500 && p>0) p*=0.75; // high bases unfavorable
-
-  // CIN suppression: strong cap kills storm initiation
-  if(c.cin>200)      p*=0.05;
-  else if(c.cin>150) p*=0.2;
-  else if(c.cin>100) p*=0.45;
-  else if(c.cin>50)  p*=0.8;
-
-  // CAPE amplifier: extreme instability slightly raises odds
-  if(c.cape>4000 && p>0)      p*=1.15;
-  else if(c.cape>2500 && p>0) p*=1.08;
-
-  // Lifted index: very stable atmosphere caps storms
-  if(c.li>3)       p*=0.25;
-  else if(c.li>1)  p*=0.6;
-  else if(c.li<-8) p*=1.08;
-
-  // Hard cap: 20% is an extraordinary outbreak-level value
-  return Math.min(20,Math.max(0,Math.round(p*10)/10));
+  return Math.min(20, Math.max(0, Math.round(p * 10) / 10));
 }
-
 
 // ── Storm Initiation Score (0-100) ──
 function stormInitiationScore(c){
-  // 1. Hard thermodynamic limits: No fuel = no storms
   if (c.cape < 100) return 0;
-  
   var score = 0;
-
-  // 2. Thermodynamic Priming (0 - 60 points)
-  // How explosive is the atmosphere, and is the "lid" (CIN) breakable?
-  var capeScore = Math.min(30, (c.cape / 3000) * 30); // Max 30 pts at 3000 CAPE
+  var capeScore = Math.min(30, (c.cape / 3000) * 30);
   
   var cinScore = 0;
-  if (c.cin < 15) cinScore = 30;      // Cap is gone, free convection likely
-  else if (c.cin < 50) cinScore = 20; // Weak cap, easily broken by a front
-  else if (c.cin < 100) cinScore = 5; // Moderate cap, needs strong forcing
-  else cinScore = -20;                // Strong cap, actively suppresses storms
+  if (c.cin < 15) cinScore = 30;
+  else if (c.cin < 50) cinScore = 20;
+  else if (c.cin < 100) cinScore = 5;
+  else cinScore = -20;
 
   score += (capeScore + cinScore);
 
-  // 3. Forcing / Trigger (0 - 40 points)
-  // Are models actually printing water falling in this highly unstable air?
-  if (c.totalPrecip > 2.0) score += 40;      // Heavy rain in unstable air = Thunderstorm
-  else if (c.totalPrecip > 0.5) score += 30; // Moderate rain = Likely Thunderstorm
-  else if (c.totalPrecip > 0.1) score += 15; // Light precip = Could be elevated storms
+  if (c.totalPrecip > 2.0) score += 40;
+  else if (c.totalPrecip > 0.5) score += 30;
+  else if (c.totalPrecip > 0.1) score += 15;
   else {
-    // No precip explicitly forecast by the model for this exact point.
-    // BUT, if we have huge CAPE and zero CIN, we MUST respect the threat 
-    // because dryline storms could fire miles away and move in.
     if (c.cin < 25 && c.cape > 1500) score += 20; 
   }
 
-  // 4. Probability Modifier (Slight bump/penalty based on confidence)
-  if (c.precip > 60) score += 10;
-  else if (c.precip < 20) score -= 10;
+ if (c.precip > 60) score += 10;
+  else if (c.precip < 20) score -= 25; // Harsher penalty for low probability
+  else if (c.precip === 0 && c.totalPrecip === 0) score *= 0.5; // Cut score in half if absolutely zero water is forecast
 
-  // 5. Final Cap Sanity Check
-  if (c.cin > 200) score *= 0.1; // "Loaded gun" setup, but the cap holds strong
-  else if (c.cin > 125) score *= 0.4; // Tough cap to break
+  if (c.cin > 200) score *= 0.1;
+  else if (c.cin > 125) score *= 0.4;
 
   return Math.min(100, Math.max(0, Math.round(score)));
 }
@@ -1213,7 +1172,6 @@ function renderInitiationGauge(computed, initScores, probs){
   // Find peak initiation hour and peak prob hour
   var peakInitScore = Math.max.apply(null, initScores);
   var peakInitIdx   = initScores.indexOf(peakInitScore);
-  var peakProbIdx   = probs.indexOf(Math.max.apply(null, probs));
   var peakC         = computed[peakInitIdx] || computed[0];
   var peakFactor    = initiationFactor(peakInitScore);
 
@@ -1264,6 +1222,7 @@ function renderInitiationGauge(computed, initScores, probs){
      sub: peakC.cape > 2000 ? 'Explosive fuel ✓' : peakC.cape > 1000 ? 'Strong fuel' : peakC.cape > 250 ? 'Marginal' : 'Stable',
      col: peakC.cape > 2000 ? 'var(--red)' : peakC.cape > 1000 ? 'var(--orange)' : peakC.cape > 250 ? 'var(--yellow)' : 'var(--muted)'},
   ];
+
   var facHTML = factors.map(function(f){
     return '<div class="init-factor">'
       +'<div class="init-factor-icon">'+f.icon+'</div>'
@@ -1325,7 +1284,7 @@ function switchTab(name, btn) {
   if(pane) pane.classList.add('active');
   if(btn)  btn.classList.add('active');
   if(name==='learn') renderLearnTab();
-  // Keep loading/results visible outside tabs (they're outside tab panes)
+  // Keep loading/results visible outside tabs (theyre outside tab panes)
   if(name==='forecast'){
     document.getElementById('loadingEl').style.display='';
     document.getElementById('resultsEl').style.display='';
@@ -2302,6 +2261,7 @@ render = function(name, lat, lon, now, hourly, computed, probs, alertsData, tz, 
   _origRender(name, lat, lon, now, hourly, computed, probs, alertsData, tz, initScores);
   renderTrendChart(hourly, computed, probs);
   wireTimeline(computed, probs, now);
+  renderInitiationGauge(computed, initScores, probs); // THE MISSING LINK IS FIXED HERE
   updateRefreshBadge();
   scheduleAutoRefresh();
 };
@@ -2640,8 +2600,6 @@ function updateRefreshBadge() {
     ? 'Just updated · auto-refresh in 30 min'
     : 'Updated ' + mins + ' min ago' + (mins > 25 ? ' · refreshing soon' : ' · auto-refresh in ' + (30-mins) + ' min');
 }
-
-
 
 </script>
 </body>
